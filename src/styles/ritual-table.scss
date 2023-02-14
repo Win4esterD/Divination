@@ -1,0 +1,49 @@
+.ritual-table{
+  height: 1080px;
+  background-image: url('../assets/black-of-planks.jpg');
+}
+
+.ritual-subjects__div{
+  position: absolute;
+
+  .candle-fire{
+    width: 6px;
+    height: 19px;
+  }
+
+}
+
+.main-pentagram{
+  margin-left: 26.9vw;
+}
+
+.pentacle{
+  top: 38em;
+  left: 5vw;
+}
+
+.bafomet-stamp{
+  left: 73.4vw;
+  top: 37em;
+}
+
+.right-pentacle{
+  left: 73.4vw;
+  top: 5.8em;
+}
+
+.candle{
+  position: relative;
+
+  .candle-img{
+    position: absolute;
+    bottom: 11.5em;
+    left: 10em;
+  }
+
+  .candle-fire{
+    position: absolute;
+    bottom: 17.4em;
+    left: 12.6em;
+  }
+}
