@@ -13,6 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
+    static: './dist',
     port: 4200,
     open: true,
     hot: false
@@ -35,6 +36,7 @@ module.exports = {
       filename: '[name].[contenthash].css'
     }),
   ],
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -74,6 +76,5 @@ module.exports = {
       new CssMinimizerPlugin()
     ]
   },
-  devtool: 'source-map'
 
 }
