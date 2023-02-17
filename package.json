@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Application for divination",
   "main": "index.js",
-  "watch": "webpack --mode development --watch",
   "scripts": {
+    "watch": "webpack --mode development --watch",
     "test": "test",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",

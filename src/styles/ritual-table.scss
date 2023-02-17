@@ -1,6 +1,8 @@
 .ritual-table{
   height: 1080px;
-  background-image: url('../assets/black-of-planks.jpg');
+  background-image: url('../assets/IMG/black-of-planks.jpg');
+  background-size: cover;
+  position: relative;
 }
 
 .ritual-subjects__div{
@@ -14,7 +16,11 @@
 }
 
 .main-pentagram{
-  margin-left: 26.9vw;
+  left: 26.9vw;
+}
+
+.bafomet-head{
+  top: 1em;
 }
 
 .pentacle{
@@ -23,13 +29,13 @@
 }
 
 .bafomet-stamp{
-  left: 73.4vw;
+  right: 3vw;
   top: 37em;
 }
 
 .right-pentacle{
-  left: 73.4vw;
-  top: 5.8em;
+  right: 3vw;
+  top: 2em;
 }
 
 .candle{
@@ -45,5 +51,70 @@
     position: absolute;
     bottom: 17.4em;
     left: 12.6em;
+  }
+}
+
+.cards-wrapper{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 52em;
+  top: 47em;
+  left: 28vw;
+  gap: 0.24vw;
+
+  .card{
+    height: 4.3em;
+    width: 2.3em;
+    background: url('../assets/IMG/covers/cover1.png');
+    background-size: cover;
+    transition: ease 1s;
+  }
+
+  .card:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+}
+
+
+@media (max-width: 1669px){
+  .pentacle{
+    left: 1.5vw;
+  }
+
+  .cards-wrapper{
+    left: 25vw;
+  }
+
+  .main-pentagram{
+    left: 24.5vw; 
+  }
+}
+
+@media (max-width: 1610px){
+  .right-pentacle{
+    right: 1.5vw;
+  }
+
+  .bafomet-stamp{
+    right: 1.5vw;
+  }
+}
+
+@media(max-width: 1581px){
+  .right-pentacle__img{
+    width: 90%;
+    height: 90%;
+  }
+
+  .bafomet-stamp__img{
+    width: 90%;
+    height: 90%;
+  }
+
+  .pentacle__img{
+    width: 90%;
+    height: 90%;
   }
 }
