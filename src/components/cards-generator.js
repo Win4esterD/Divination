@@ -9,13 +9,13 @@ class CardsGenerator extends React.Component{
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  generateCard(num){
+  generateOneCard(num){
     return (
-      <div id={String(num)} className="card">{String(num)}</div>
+      <div id={String(num)} key={String(num)} className="card"></div>
     )
   }
 
-  generateCards(){
+  generateAllCards(){
     const result = [];
     const numCounter = [];
 
@@ -23,7 +23,7 @@ class CardsGenerator extends React.Component{
       let randInt = this.getRandomInt(0, 78);
       if(!numCounter.includes(randInt)){
         numCounter.push(randInt);
-        result.push(this.generateCard(randInt))
+        result.push(this.generateOneCard(randInt))
       }
     }
 
@@ -33,7 +33,7 @@ class CardsGenerator extends React.Component{
   render(){
     return (
       <div className="cards-wrapper">
-        {this.generateCards().map((card) => {
+        {this.generateAllCards().map((card) => {
           return card
         })}
       </div>

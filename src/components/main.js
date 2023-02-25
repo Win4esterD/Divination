@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/ritual-table.scss';
 import RitualSubjects from './ritual-subjects';
-import CardsGenerator from './cards-generation';
+import CardsGenerator from './cards-generator';
 
 class Main extends React.Component{
+
+
   render(){
     return (
       <main>
