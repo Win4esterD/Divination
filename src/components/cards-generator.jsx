@@ -6,7 +6,20 @@ class CardsGenerator extends React.Component{
 
   constructor(props){
     super(props);
+
     this.revealCard = this.revealCard.bind(this);
+  }
+
+  componentDidMount(){
+    const layouts = document.querySelector('.layouts');
+    layouts.addEventListener('change', () => {
+      this.props.resetCounter();
+      this.props.resetIds();
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((el) => {
+        el.removeAttribute('style');
+      })
+    });
   }
 
 
@@ -18,10 +31,15 @@ class CardsGenerator extends React.Component{
 
   //Testing cards
   revealCard(event){
-    const pentagram = document.querySelector('.main-pentagram__img');
-    event.target.style.backgroundImage = `url(${WaiteIMGs[Number(event.target.id) - 1].image})`;
-    pentagram.src = WaiteIMGs[Number(event.target.id) - 1].image;
-    console.log(cardsRus[Number(event.target.id) - 1].name);
+    const card = event.target;
+    const layoutCards = document.querySelectorAll('.layout-card');
+    if(this.props.counter < layoutCards.length){
+      layoutCards[this.props.counter].style.backgroundImage = `url(${WaiteIMGs[card.id - 1].image})`;
+      this.props.collectIds(card.id);
+      this.props.increaseCounter();
+      card.style.display = "none";
+    }
+    
   }
 
   //onClick function - testing cards

@@ -56,6 +56,30 @@
   }
 }
 
+.layout{
+  position: absolute;
+  z-index: 1;
+  left: 37em;
+  top: 9em;
+}
+
+.layout div {
+  position: absolute;
+}
+
+.card{
+  height: 4.3em;
+  width: 2.3em;
+  background: url('../assets/IMG/covers/cover1.png');
+  background-size: cover;
+  transition: ease 1s;
+}
+
+.card:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 .cards-wrapper{
   position: absolute;
   display: flex;
@@ -64,19 +88,6 @@
   top: 47em;
   left: 28vw;
   gap: 0.24vw;
-
-  .card{
-    height: 4.3em;
-    width: 2.3em;
-    background: url('../assets/IMG/covers/cover1.png');
-    background-size: cover;
-    transition: ease 1s;
-  }
-
-  .card:hover{
-    cursor: pointer;
-    transform: scale(1.2);
-  }
 }
 
 
@@ -265,6 +276,92 @@
 
   .main-pentagram {
     left: 14em;
+  }
+}
+
+@media (max-width: 930px){
+  .main-pentagram__img{
+    width: 30em;
+    height: 30em;
+  }
+
+  .cards-wrapper{
+    width: 39em;
+    top: 40em;
+    left: 17vw;
+  }
+
+  .candle{
+    display: none;
+  }
+}
+
+@media (max-width: 910px){
+  .bafomet-head__img {
+    width: 14em;
+    height: 9.75em;
+  }
+
+  .right-pentacle__img {
+    width: 9.75em;
+    height: 9.75em;
+  }
+
+  .pentacle__img {
+    width: 9.75em;
+    height: 9.75em;
+  }
+
+  .bafomet-stamp__img {
+    width: 9.75em;
+    height: 9.75em;
+  }
+}
+
+@media (max-width: 775px){
+  .cards-wrapper {
+    left: 9vw;
+  }
+}
+
+@media (max-width: 768px){
+  .main-pentagram{
+    left: 18vw;
+  }
+}
+
+@media (max-width: 688px){
+  .cards-wrapper{
+    left: 13vw;
+    width: 32em;
+    top: 36em;
+  }
+}
+
+@media (max-width: 594px){
+  .cards-wrapper{
+    left: 5vw;
+    width: 32em;
+    top: 36em;
+  }
+
+  .main-pentagram__img{
+    width: 24em;
+    height: 24em;
+  }
+
+  .bafomet-head__img {
+    width: 10em;
+    height: 6.75em;
+  }
+
+  .main-pentagram {
+    top: 7em;
+    left: 9vw;
+  }
+
+  .layout{
+    left: 31em;
   }
 }
 

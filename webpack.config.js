@@ -17,7 +17,11 @@ module.exports = {
     port: 4200,
     open: true,
     hot: false
-},
+  },
+  resolve: {
+    extensions: ['.js', '.json', '.png', '.jsx']
+  },
+
   plugins: [
     new HTMLWepbackPlugin({
       title: 'Divination',

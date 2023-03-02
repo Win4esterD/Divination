@@ -1,0 +1,53 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.results{
+  position: relative;
+  background-image: url('../assets/IMG/parchment.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.results-wrapper{
+  display: flex;
+  font-family: $main-font;
+  position: relative;
+  left: 3em;
+  top: 3em;
+  width: 75em;
+}
+
+.arcane-name{
+  font-family: $main-font;
+  font-size: 74px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.result-text{
+  position: relative;
+  top: 5em;
+  left: 3em;
+}
+
+.arcane-meaning{
+  font-weight: 700;
+  font-size: 37px;
+}
+
+.arcane-description{
+  font-size: 24px;
+  text-align: justify;
+  width: 800px;
+  padding-bottom: 3em;
+}
+
+.in-life-paragraphs{
+  position: relative;
+  top: 3em;
+}
+
+.in-life{
+  @include inlife();
+}
+
