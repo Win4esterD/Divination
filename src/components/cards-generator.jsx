@@ -1,6 +1,5 @@
 import React from "react";
 import WaiteIMGs from "../JSON/waite-images.json";
-import cardsRus from "../JSON/cards-rus.json";
 
 class CardsGenerator extends React.Component{
 
@@ -29,7 +28,7 @@ class CardsGenerator extends React.Component{
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  //Testing cards
+  //Revealing cards
   revealCard(event){
     const card = event.target;
     const layoutCards = document.querySelectorAll('.layout-card');
