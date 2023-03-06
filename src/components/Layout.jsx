@@ -23,6 +23,9 @@ class Layout extends React.Component{
       }else if(layoutOption.value === layoutOption[2].value){
         this.setState({layout: this.loveOracle()});
         this.props.getLayout('Love Oracle');
+      }else if(layoutOption.value === layoutOption[3].value){
+        this.setState({layout: this.compas()});
+        this.props.getLayout('Compas');
       }
     })
   }
@@ -64,6 +67,17 @@ class Layout extends React.Component{
         <div className="card layout-card love-oracle__2"></div>
         <div className="card layout-card love-oracle__3"></div>
         <div className="card layout-card love-oracle__4"></div>
+      </div>
+    )
+  }
+  
+  compas(){
+    return (
+      <div className="compas">
+        <div className="card layout-card compas__1"></div>
+        <div className="card layout-card compas__2"></div>
+        <div className="card layout-card compas__3"></div>
+        <div className="card layout-card compas__4"></div>
       </div>
     )
   }

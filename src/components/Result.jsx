@@ -29,25 +29,89 @@ class Result extends React.Component{
 
   celticCrossResult(){
     const predictions = [];
+    const cards = this.props.cards;
+    const ids = this.props.ids;
     if(this.props.language === "Русский"){
-      predictions.push(...["Значение", "Эмоции", "Предложение", "Перспективы"])
+      predictions.push(...["Значение:", "Эмоции:", "Предложение:", "Перспективы:"]);
     }
 
     if(this.props.ids.length === 10){
       return(
         <div className="celtic-cross-results">
-          {this.generateOneCardResult(this.props.cards[this.props.ids[0] - 1].name, WaiteIMGs[this.props.ids[0] - 1].image, this.props.cards[this.props.ids[0] - 1].description, this.props.cards[this.props.ids[0] - 1].meaning, predictions[0], this.props.cards[this.props.ids[0] - 1].love.split('-')[1], this.props.cards[this.props.ids[0] - 1].profession.split('-')[1], this.props.cards[this.props.ids[0] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[1] - 1].name, WaiteIMGs[this.props.ids[1] - 1].image, this.props.cards[this.props.ids[1] - 1].description, this.props.cards[this.props.ids[1] - 1].meaning, predictions[0], this.props.cards[this.props.ids[1] - 1].love.split('-')[1], this.props.cards[this.props.ids[1] - 1].profession.split('-')[1], this.props.cards[this.props.ids[1] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[2] - 1].name, WaiteIMGs[this.props.ids[2] - 1].image, this.props.cards[this.props.ids[2] - 1].description, this.props.cards[this.props.ids[2] - 1].emotions, predictions[1], this.props.cards[this.props.ids[2] - 1].love.split('-')[1], this.props.cards[this.props.ids[2] - 1].profession.split('-')[1], this.props.cards[this.props.ids[2] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[3] - 1].name, WaiteIMGs[this.props.ids[3] - 1].image, this.props.cards[this.props.ids[3] - 1].description, this.props.cards[this.props.ids[3] - 1].emotions, predictions[1], this.props.cards[this.props.ids[3] - 1].love.split('-')[1], this.props.cards[this.props.ids[3] - 1].profession.split('-')[1], this.props.cards[this.props.ids[3] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[4] - 1].name, WaiteIMGs[this.props.ids[4] - 1].image, this.props.cards[this.props.ids[4] - 1].description, this.props.cards[this.props.ids[4] - 1].meaning, predictions[0], this.props.cards[this.props.ids[4] - 1].love.split('-')[1], this.props.cards[this.props.ids[4] - 1].profession.split('-')[1], this.props.cards[this.props.ids[4] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[5] - 1].name, WaiteIMGs[this.props.ids[5] - 1].image, this.props.cards[this.props.ids[5] - 1].description, this.props.cards[this.props.ids[5] - 1].perspectives, predictions[3], this.props.cards[this.props.ids[5] - 1].love.split('-')[1], this.props.cards[this.props.ids[5] - 1].profession.split('-')[1], this.props.cards[this.props.ids[5] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[6] - 1].name, WaiteIMGs[this.props.ids[6] - 1].image, this.props.cards[this.props.ids[6] - 1].description, this.props.cards[this.props.ids[6] - 1].emotions, predictions[1], this.props.cards[this.props.ids[6] - 1].love.split('-')[1], this.props.cards[this.props.ids[6] - 1].profession.split('-')[1], this.props.cards[this.props.ids[6] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[7] - 1].name, WaiteIMGs[this.props.ids[7] - 1].image, this.props.cards[this.props.ids[7] - 1].description, this.props.cards[this.props.ids[7] - 1].emotions, predictions[1], this.props.cards[this.props.ids[7] - 1].love.split('-')[1], this.props.cards[this.props.ids[7] - 1].profession.split('-')[1], this.props.cards[this.props.ids[7] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[8] - 1].name, WaiteIMGs[this.props.ids[8] - 1].image, this.props.cards[this.props.ids[8] - 1].description, this.props.cards[this.props.ids[8] - 1].perspectives, predictions[3], this.props.cards[this.props.ids[8] - 1].love.split('-')[1], this.props.cards[this.props.ids[8] - 1].profession.split('-')[1], this.props.cards[this.props.ids[8] - 1].generally.split('-')[1])}
-          {this.generateOneCardResult(this.props.cards[this.props.ids[9] - 1].name, WaiteIMGs[this.props.ids[9] - 1].image, this.props.cards[this.props.ids[9] - 1].description, this.props.cards[this.props.ids[9] - 1].perspectives, predictions[3], this.props.cards[this.props.ids[9] - 1].love.split('-')[1], this.props.cards[this.props.ids[9] - 1].profession.split('-')[1], this.props.cards[this.props.ids[9] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[0] - 1].name, WaiteIMGs[ids[0] - 1].image, cards[ids[0] - 1].description, cards[ids[0] - 1].meaning, predictions[0], cards[ids[0] - 1].love.split('-')[1], cards[ids[0] - 1].profession.split('-')[1], cards[ids[0] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[1] - 1].name, WaiteIMGs[ids[1] - 1].image, cards[ids[1] - 1].description, cards[ids[1] - 1].meaning, predictions[0], cards[ids[1] - 1].love.split('-')[1], cards[ids[1] - 1].profession.split('-')[1], cards[ids[1] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[2] - 1].name, WaiteIMGs[ids[2] - 1].image, cards[ids[2] - 1].description, cards[ids[2] - 1].emotions, predictions[1], cards[ids[2] - 1].love.split('-')[1], cards[ids[2] - 1].profession.split('-')[1], cards[ids[2] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[3] - 1].name, WaiteIMGs[ids[3] - 1].image, cards[ids[3] - 1].description, cards[ids[3] - 1].emotions, predictions[1], cards[ids[3] - 1].love.split('-')[1], cards[ids[3] - 1].profession.split('-')[1], cards[ids[3] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[4] - 1].name, WaiteIMGs[ids[4] - 1].image, cards[ids[4] - 1].description, cards[ids[4] - 1].meaning, predictions[0], cards[ids[4] - 1].love.split('-')[1], cards[ids[4] - 1].profession.split('-')[1], cards[ids[4] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[5] - 1].name, WaiteIMGs[ids[5] - 1].image, cards[ids[5] - 1].description, cards[ids[5] - 1].perspectives, predictions[3], cards[ids[5] - 1].love.split('-')[1], cards[ids[5] - 1].profession.split('-')[1], cards[ids[5] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[6] - 1].name, WaiteIMGs[ids[6] - 1].image, cards[ids[6] - 1].description, cards[ids[6] - 1].emotions, predictions[1], cards[ids[6] - 1].love.split('-')[1], cards[ids[6] - 1].profession.split('-')[1], cards[ids[6] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[7] - 1].name, WaiteIMGs[ids[7] - 1].image, cards[ids[7] - 1].description, cards[ids[7] - 1].emotions, predictions[1], this.props.cards[ids[7] - 1].love.split('-')[1], cards[ids[7] - 1].profession.split('-')[1], cards[ids[7] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[8] - 1].name, WaiteIMGs[ids[8] - 1].image, cards[ids[8] - 1].description, cards[ids[8] - 1].perspectives, predictions[3], cards[ids[8] - 1].love.split('-')[1], cards[ids[8] - 1].profession.split('-')[1], cards[ids[8] - 1].generally.split('-')[1])}
+          {this.generateOneCardResult(cards[ids[9] - 1].name, WaiteIMGs[ids[9] - 1].image, cards[ids[9] - 1].description, cards[ids[9] - 1].perspectives, predictions[3], cards[ids[9] - 1].love.split('-')[1], cards[ids[9] - 1].profession.split('-')[1], cards[ids[9] - 1].generally.split('-')[1])}
         </div>
       
+      )
+    }
+  }
+
+  crossResults(){
+    const predictions = [];
+    const cards = this.props.cards;
+    const ids = this.props.ids;
+    if(this.props.language === "Русский"){
+      predictions.push(...["Значение:", "Эмоции:", "Предложение:", "Перспективы:", "Не делайте этого:"]);
+    }
+
+    if(this.props.ids.length === 4){
+      return(
+        <div className="cross-res">
+          {this.generateOneCardResult(cards[ids[0] - 1].name, WaiteIMGs[ids[0] - 1].image, cards[ids[0] - 1].description, cards[ids[0] - 1].meaning, predictions[0], cards[ids[0] - 1].love.split('-')[1], cards[this.props.ids[0] - 1].profession.split('-')[1], cards[ids[0] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[1] - 1].name, WaiteIMGs[ids[1] - 1].image, cards[ids[1] - 1].description, cards[ids[1] - 1].proposal, predictions[4], cards[ids[1] - 1].love.split('-')[1], cards[this.props.ids[1] - 1].profession.split('-')[1], cards[ids[1] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[2] - 1].name, WaiteIMGs[ids[2] - 1].image, cards[ids[2] - 1].description, cards[ids[2] - 1].proposal, predictions[2], cards[ids[2] - 1].love.split('-')[1], cards[this.props.ids[2] - 1].profession.split('-')[1], cards[ids[2] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[3] - 1].name, WaiteIMGs[ids[3] - 1].image, cards[ids[3] - 1].description, cards[ids[3] - 1].perspectives, predictions[3], cards[ids[3] - 1].love.split('-')[1], cards[this.props.ids[3] - 1].profession.split('-')[1], cards[ids[3] - 1].generally.split('-')[1])};
+        </div>
+      
+      )
+    }
+  }
+
+  loveOracleResults(){
+    const predictions = [];
+    const cards = this.props.cards;
+    const ids = this.props.ids;
+    if(this.props.language === "Русский"){
+      predictions.push(...["Значение:", "Ваши чувства:", "Чувства человека к Вам:", "Совет оракула:"]);
+    }
+
+    if(this.props.ids.length === 4){
+      return(
+        <div className="love-oracle-results">
+          {this.generateOneCardResult(cards[ids[0] - 1].name, WaiteIMGs[ids[0] - 1].image, cards[ids[0] - 1].description, cards[ids[0] - 1].meaning, predictions[0], cards[ids[0] - 1].love.split('-')[1], cards[this.props.ids[0] - 1].profession.split('-')[1], cards[ids[0] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[1] - 1].name, WaiteIMGs[ids[1] - 1].image, cards[ids[1] - 1].description, cards[ids[1] - 1].emotions, predictions[1], cards[ids[1] - 1].love.split('-')[1], cards[this.props.ids[1] - 1].profession.split('-')[1], cards[ids[1] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[2] - 1].name, WaiteIMGs[ids[2] - 1].image, cards[ids[2] - 1].description, cards[ids[2] - 1].emotions, predictions[2], cards[ids[2] - 1].love.split('-')[1], cards[this.props.ids[2] - 1].profession.split('-')[1], cards[ids[2] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[3] - 1].name, WaiteIMGs[ids[3] - 1].image, cards[ids[3] - 1].description, cards[ids[3] - 1].proposal, predictions[3], cards[ids[3] - 1].love.split('-')[1], cards[this.props.ids[3] - 1].profession.split('-')[1], cards[ids[3] - 1].generally.split('-')[1])};
+        </div>
+      )
+    }
+  };
+
+  compasResults(){
+    const predictions = [];
+    const cards = this.props.cards;
+    const ids = this.props.ids;
+
+    if(this.props.language === "Русский"){
+      predictions.push(...["Значение:", "Эмоции:", "Это будет в ближайшее время:", "К этому всё приведёт:"]);
+    }
+
+    if(this.props.ids.length === 4){
+      return(
+        <div className="compas-results">
+          {this.generateOneCardResult(cards[ids[0] - 1].name, WaiteIMGs[ids[0] - 1].image, cards[ids[0] - 1].description, cards[ids[0] - 1].meaning, predictions[0], cards[ids[0] - 1].love.split('-')[1], cards[this.props.ids[0] - 1].profession.split('-')[1], cards[ids[0] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[1] - 1].name, WaiteIMGs[ids[1] - 1].image, cards[ids[1] - 1].description, cards[ids[1] - 1].perspectives, predictions[2], cards[ids[1] - 1].love.split('-')[1], cards[this.props.ids[1] - 1].profession.split('-')[1], cards[ids[1] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[2] - 1].name, WaiteIMGs[ids[2] - 1].image, cards[ids[2] - 1].description, cards[ids[2] - 1].emotions, predictions[1], cards[ids[2] - 1].love.split('-')[1], cards[this.props.ids[2] - 1].profession.split('-')[1], cards[ids[2] - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(cards[ids[3] - 1].name, WaiteIMGs[ids[3] - 1].image, cards[ids[3] - 1].description, cards[ids[3] - 1].perspectives, predictions[3], cards[ids[3] - 1].love.split('-')[1], cards[this.props.ids[3] - 1].profession.split('-')[1], cards[ids[3] - 1].generally.split('-')[1])};
+        </div>
       )
     }
   }
@@ -56,6 +120,18 @@ class Result extends React.Component{
     if(this.props.layout === "Celtic Cross"){
       return (
         <div>{this.celticCrossResult()}</div>
+      )
+    }else if(this.props.layout === "Cross"){
+      return (
+        <div>{this.crossResults()}</div>
+      )
+    }else if(this.props.layout === "Love Oracle"){
+      return (
+        <div>{this.loveOracleResults()}</div>
+      )
+    }else if(this.props.layout === "Compas"){
+      return(
+        <div>{this.compasResults()}</div>
       )
     }
   }

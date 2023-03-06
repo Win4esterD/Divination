@@ -54,8 +54,8 @@ class Header extends React.Component{
                 <option className="layouts__option 1">Кельтский крест</option>
                 <option className="layouts__option 2">Крест</option>
                 <option className="layouts__option 3">Оракул любви</option>
-                {/* <option className="layouts__option">Компас</option>
-                <option className="layouts__option">Следующий шаг</option>
+                <option className="layouts__option 4">Компас</option>
+                {/* <option className="layouts__option">Следующий шаг</option>
                 <option className="layouts__option">Путь</option> */}
               </select>
             </li>
