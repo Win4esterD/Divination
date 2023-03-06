@@ -367,3 +367,57 @@
   }
 }
 
+@media (max-width: 543px){
+  .cards-wrapper{
+    width: 28.5em;
+  }
+}
+
+@media (max-width: 496px){
+  .main-pentagram__img{
+    width: 19em;
+    height: 19em;
+  }
+
+  .cards-wrapper{
+    top: 29em;
+    width: 24em;
+  }
+
+  .layout{
+    left: 0em;
+  }
+}
+
+@media (max-width: 438px){
+  .bafomet-head{
+    top: 0em;
+  }
+}
+
+@media (max-width: 406px){
+  .card,
+  .layout .card
+  {
+    height: 40px;
+    width: 21px;
+  }
+
+  .cards-wrapper{
+    width: 23em;
+  }
+
+  .right-pentacle__img{
+    width: 7em;
+    height: 7em;
+  }
+
+  .right-pentacle{
+    top: 0em;
+  }
+
+  .cards-wrapper {
+    width: 21em;
+    gap: 0.4em;
+  }
+}

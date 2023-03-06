@@ -3,6 +3,45 @@ import * as ReactDOMClient from "react-dom/client";
 import '../styles/header.scss'
 
 class Header extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.revealBurgerMenu = this.revealBurgerMenu.bind(this);
+    this.resizeHandler = this.resizeHandler.bind(this);
+  }
+
+  componentDidMount(){
+    window.addEventListener('resize', this.resizeHandler);
+  }
+
+  resizeHandler(){
+    const header = document.querySelector('header');
+    const list = document.querySelector('.header__ul');
+    if(window.screen.width > 496){
+      header.style.height = "4.25em";
+      list.style.display = "flex";
+    }else{
+      header.style.height = "2em";
+      list.style.display = "none";
+    }
+  }
+
+  
+
+  revealBurgerMenu(){
+    const header = document.querySelector('header');
+    const list = document.querySelector('.header__ul');
+    const listStyles = window.getComputedStyle(list);
+
+    if(listStyles.display === 'none'){
+      list.style.display = "flex";
+      header.style.height = "7.5em";
+    }else{
+      list.style.display = "none";
+      header.style.height = "2em";
+    }
+  }
+
   render(){
     return (
       <header>
@@ -29,6 +68,7 @@ class Header extends React.Component{
               </select>
             </li>
           </ul>
+          <img onClick={this.revealBurgerMenu} className="burger-menu" src="assets/IMG/burger_menu.png" alt="burger-menu"></img>
         </nav>
       </header>
     )

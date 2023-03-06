@@ -5,6 +5,10 @@ header{
   background: #030000;
 }
 
+.burger-menu{
+  display: none;
+}
+
 .header__ul{
   display: flex;
   position: absolute;
@@ -116,5 +120,29 @@ header{
 
   .language__option{
     font-size: 14px;
+  }
+}
+
+@media (max-width: 496px){
+  header{
+    height: 2em;
+  }
+
+  .burger-menu{
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 0.7em;
+  }
+
+
+  .header__ul{
+    top: 0.4em;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    gap: 0.4em;
+    left: 25vw;
+    display: none;
   }
 }

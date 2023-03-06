@@ -126,3 +126,68 @@
     top: -5em;
   }
 }
+
+@media (max-width: 496px){
+  .celtic-cross{
+    left: 3em;
+    top: -8em;
+  }
+}
+
+@media (max-width: 438px){
+  .celtic-cross{
+    left: 0.1em;
+  }
+}
+
+@media (max-width: 406px){
+  .celtic-cross__1{
+    left: 11em;
+    top: 15em;
+  }
+
+  .celtic-cross__2{
+    left: 11em;
+    top: 15em;
+  }
+
+  .celtic-cross__3{
+    left: 11em;
+    top: 10em;
+  }
+
+  .celtic-cross__4{
+    left: 11em;
+    top: 20em;
+  }
+
+  .celtic-cross__5{
+    left: 6em;
+    top: 15em;
+  }
+
+  .celtic-cross__6{
+    left: 15.5em;
+    top: 15em;
+  }
+
+  .celtic-cross__7{
+    left: 18.5em;
+    top: 20em;
+  }
+
+  .celtic-cross__8{
+    left: 18.5em;
+    top: 15em;
+  }
+
+  .celtic-cross__9{
+    left: 18.5em;
+    top: 10em;
+  }
+
+  .celtic-cross__10{
+    left: 18.5em;
+    top: 6em;
+  }
+}
