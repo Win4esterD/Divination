@@ -4,7 +4,8 @@
 }
 
 .cross{
-  left: 4em;
+  left: 3vw;
+  top: 5em;
 }
 
 .cross__1{
@@ -25,4 +26,87 @@
 .cross__4{
   top: 15em;
   left: 14.5em;
+}
+
+@media (max-width: 1669px){
+  .cross{
+    left: -2em;
+  }
+}
+
+@media (max-width: 1420px){
+  .cross{
+    left: -13em;
+  }
+}
+
+@media (max-width: 1111px){
+  .cross{
+    left: -19em;
+  }
+}
+
+@media (max-width: 1124px){
+  .cross{
+    top: 0em;
+    left: -25vw;
+  }
+}
+
+@media (max-width: 1111px){
+  .cross{
+    left: -28vw;
+  }
+}
+
+@media (max-width: 972px){
+  .cross{
+    left: -32vw;
+  }
+}
+
+@media (max-width: 930px){
+  .cross{
+    left: -41vw;
+  }
+}
+
+@media (max-width: 774px){
+  .cross{
+    left: -49vw;
+  }
+}
+
+@media (max-width: 768px){
+  .cross{
+    left: -28em;
+  }
+}
+
+@media (max-width: 590px){
+  .cross{
+    left: -31em;
+  }
+}
+
+@media (max-width: 496px){
+  .cross{
+    left: -3em;
+    top: -5em;
+  }
+}
+
+@media (max-width: 406px){
+  .cross__1{
+    left: 11em;
+  }
+
+  .cross__2{
+    left: 17em;
+  }
+
+  .cross__3{
+    top: 7em;
+    left: 14.5em;
+  }
 }

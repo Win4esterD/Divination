@@ -1,0 +1,87 @@
+.compas {
+  display: flex;
+  width: 19em;
+  gap: 3em;
+  top: 13em;
+  left: 11em;
+}
+
+.compas div {
+  position: static;
+}
+
+@media (max-width: 1680px){
+  .compas {
+    left: 6em;
+  }
+}
+
+@media (max-width: 1600px){
+  .compas {
+    left: 3em;
+  }
+}
+
+@media (max-width: 1423px){
+  .compas {
+    left: -6em;
+  }
+}
+
+@media (max-width: 1280px){
+  .compas {
+    left: -8em;
+  }
+}
+
+@media (max-width: 1152px){
+  .compas {
+    left: -11em;
+  }
+}
+
+@media (max-width: 1024px){
+  .compas {
+    left: -13.5em;
+  }
+}
+
+@media (max-width: 930px){
+  .compas {
+    top: 8em;
+    left: -16em;
+  }
+}
+
+@media (max-width: 768px){
+  .compas {
+    left: -22em;
+  }
+}
+
+@media (max-width: 594px){
+  .compas {
+    left: -25em;
+  }
+}
+
+@media (max-width: 496px){
+  .compas {
+    left: 4em;
+    top: 5em;
+  }
+}
+
+@media (max-width: 406px){
+  .compas {
+    left: 4em;
+    top: 6em;
+  }
+}
+
+@media (max-width: 368px){
+  .compas {
+    width: 15em;
+  }
+}
+

@@ -421,3 +421,9 @@
     gap: 0.4em;
   }
 }
+
+@media (max-width: 354px){
+  .cards-wrapper {
+    width: 19em;
+  }
+}

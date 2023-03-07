@@ -1,13 +1,22 @@
 import React from 'react';
 import '../styles/layouts/celtic-cross.scss';
 import "../styles/layouts/cross.scss";
+import "../styles/layouts/love-oracle.scss";
+import "../styles/layouts/compas.scss";
 
 class Layout extends React.Component{
 
   constructor(props){
     super(props);
+    this.layoutFunctions = {
+      'Celtic Cross': this.celticCross(),
+      'Cross': this.cross(),
+      'Love Oracle': this.loveOracle(),
+      'Compas': this.compas(),
+    }
+
     this.state = {
-      layout: this.celticCross(),
+      layout: this.layoutFunctions['Celtic Cross'],
     }
   }
 
