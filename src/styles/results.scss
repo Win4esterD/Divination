@@ -52,3 +52,121 @@
   @include inlife();
 }
 
+@media (max-width: 1296px){
+  .arcane-description{
+    width: auto;
+  }
+
+  .results-wrapper{
+    width: 60em;
+  }
+}
+
+@media (max-width: 1064px){
+  .arcane-image-img{
+    width: 300px;
+    height: 500px;
+  }
+
+  .arcane-meaning{
+    font-size: 1.625em;
+  }
+
+  .arcane-description{
+    font-size: 1.375em;
+    width: 25em;
+  }
+
+  .in-life-paragraphs{
+    top: 1em;
+  }
+
+  .results-wrapper {
+    width: 40em;
+  }
+}
+
+@media (max-width: 952px){
+  .results-wrapper{
+    left: 1em;
+  }
+
+  .result-text{
+    left: 1.5em;
+  }
+}
+
+@media (max-width: 894px){
+  .arcane-description{
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 782px){
+  .arcane-meaning{
+    font-size: 1.375em;
+  }
+
+  .arcane-description {
+    font-size: 1em;
+  }
+
+  .result-text{
+    height: auto;
+  }
+}
+
+@media (max-width: 744px){
+  .result-text{
+    top: 1.6em;
+  }
+
+  .arcane-name{
+    font-size: 1.5em;
+  }
+
+  .arcane-image-img{
+    width: 200px;
+    height: 334px;
+  }
+
+  .in-life{
+    font-size: 1em;
+  }
+
+  .in-life-paragraphs{
+    top: 0em;
+  }
+
+  .arcane-description{
+    padding-bottom: 1em;
+  }
+
+  .results-wrapper{
+    padding-bottom: 1em;
+  }
+}
+
+@media (max-width: 682px){
+  .results-wrapper {
+    width: 35em;
+  }
+
+  .result-text{
+    width: auto;
+  }
+}
+
+@media (max-width: 640px){
+  .results-wrapper {
+    width: 25em;
+  }
+
+  .arcane-description{
+    width: 20em;
+  }
+
+  .in-life-paragraphs p{
+    padding-bottom: 0.5em;
+  }
+}

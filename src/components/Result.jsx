@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/results.scss';
 import WaiteIMGs from "../JSON/waite-images.json";
+import CardsRus from "../JSON/cards-rus.json";
 
 
 class Result extends React.Component{
@@ -117,23 +118,35 @@ class Result extends React.Component{
   }
   
   render(){
-    if(this.props.layout === "Celtic Cross"){
-      return (
-        <div>{this.celticCrossResult()}</div>
-      )
-    }else if(this.props.layout === "Cross"){
-      return (
-        <div>{this.crossResults()}</div>
-      )
-    }else if(this.props.layout === "Love Oracle"){
-      return (
-        <div>{this.loveOracleResults()}</div>
-      )
-    }else if(this.props.layout === "Compas"){
-      return(
-        <div>{this.compasResults()}</div>
-      )
-    }
+    // if(this.props.layout === "Celtic Cross"){
+    //   return (
+    //     <div>{this.celticCrossResult()}</div>
+    //   )
+    // }else if(this.props.layout === "Cross"){
+    //   return (
+    //     <div>{this.crossResults()}</div>
+    //   )
+    // }else if(this.props.layout === "Love Oracle"){
+    //   return (
+    //     <div>{this.loveOracleResults()}</div>
+    //   )
+    // }else if(this.props.layout === "Compas"){
+    //   return(
+    //     <div>{this.compasResults()}</div>
+    //   )
+    // }
+
+    
+    return(
+      <div className="celtic-cross-results">
+          {this.generateOneCardResult(CardsRus[17 - 1].name, WaiteIMGs[17 - 1].image, CardsRus[17 - 1].description, CardsRus[17 - 1].meaning, "Не делайте этого:", CardsRus[17 - 1].love.split('-')[1], CardsRus[17 - 1].profession.split('-')[1], CardsRus[17 - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(CardsRus[5 - 1].name, WaiteIMGs[5 - 1].image, CardsRus[5 - 1].description, CardsRus[5 - 1].meaning, "Сейчас этого делать не стоит", CardsRus[5 - 1].love.split('-')[1], CardsRus[5 - 1].profession.split('-')[1], CardsRus[5 - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(CardsRus[6 - 1].name, WaiteIMGs[6 - 1].image, CardsRus[6 - 1].description, CardsRus[6 - 1].meaning, "Сейчас этого делать не стоит", CardsRus[6 - 1].love.split('-')[1], CardsRus[6 - 1].profession.split('-')[1], CardsRus[6 - 1].generally.split('-')[1])};
+          {this.generateOneCardResult(CardsRus[15 - 1].name, WaiteIMGs[15 - 1].image, CardsRus[15 - 1].description, CardsRus[15 - 1].meaning, "Сейчас этого делать не стоит", CardsRus[15 - 1].love.split('-')[1], CardsRus[15 - 1].profession.split('-')[1], CardsRus[15 - 1].generally.split('-')[1])};
+          
+        </div>
+    )
+    
   }
 }
 
