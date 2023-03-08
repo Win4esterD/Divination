@@ -6,6 +6,8 @@ class CardsGenerator extends React.Component{
   constructor(props){
     super(props);
 
+    this.cardSound = new Audio('../assets/audio/card-fly.mp3');
+
     this.revealCard = this.revealCard.bind(this);
   }
 
@@ -33,6 +35,7 @@ class CardsGenerator extends React.Component{
     const card = event.target;
     const layoutCards = document.querySelectorAll('.layout-card');
     if(this.props.counter < layoutCards.length){
+      this.cardSound.play();
       layoutCards[this.props.counter].style.backgroundImage = `url(${WaiteIMGs[card.id - 1].image})`;
       this.props.collectIds(card.id);
       this.props.increaseCounter();
@@ -41,7 +44,7 @@ class CardsGenerator extends React.Component{
     
   }
 
-  //onClick function - testing cards
+  //generates cards, where "num" is id of the card to be generated
   generateOneCard(num){
     return (
       <div id={String(num)} key={String(num)} className="card" onClick={this.revealCard}></div>

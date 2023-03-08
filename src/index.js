@@ -6,4 +6,4 @@ import './styles/defaults.scss';
 
 
 const app = ReactDOMClient.createRoot(document.querySelector('#app'));
-app.render(<App />);
+app.render(<React.StrictMode><App /></React.StrictMode>);

@@ -219,3 +219,13 @@
   }
 
 }
+
+@media (max-width: 380px){
+  .arcane-name {
+    font-size: 0.85em;
+  }
+
+  .result-text {
+    left: 0.3em;
+  }
+}
