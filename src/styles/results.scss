@@ -170,3 +170,52 @@
     padding-bottom: 0.5em;
   }
 }
+
+@media (max-width: 560px){
+  .arcane-meaning {
+    font-size: 1em;
+  }
+
+  .arcane-name {
+    font-size: 1em;
+  }
+
+  .arcane-description {
+    font-size: 0.85em;
+  }
+
+  .in-life-paragraphs p{
+    font-size: 0.85em;
+  }
+
+  .result-text {
+    left: 1em;
+  }
+
+  .arcane-image-img{
+    width: 150px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 478px){
+  .arcane-image-img{
+    width: 100px;
+    height: 167px;
+  }
+}
+
+@media (max-width: 444px){
+  .result-text {
+    top: 0.9em;
+  }
+
+  .arcane-description {
+    width: 16em;
+  }
+
+  .results-wrapper {
+    width: 20em;
+  }
+
+}
