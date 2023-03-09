@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/results.scss';
 import WaiteIMGs from "../JSON/waite-images.json";
 import ResetButtom from './Reset-button';
+import CardsEng from '../JSON/cards-en.json';
 
 
 class Result extends React.Component{
@@ -12,6 +13,30 @@ class Result extends React.Component{
   }
 
   generateOneCardResult(cardName, cardImage, arcaneDescription, prediction, meaning, love, profession, generally){
+    const inLove = {
+      "Русский": "В любви и отношениях - ",
+      "English": "In love and relationships - ",
+      "Español": "En amor y relaciones - ",
+    };
+
+    const InPofession = {
+      "Русский": "В профессии - ",
+      "English": "In profession - ",
+      "Español": "En profesión - ",
+    };
+
+    const InGeneral = {
+      "Русский": "В целом - ",
+      "English": "In general - ",
+      "Español": "En general - ",
+    };
+
+    const arcaneDesc = {
+      "Русский": "Описание аркана:",
+      "English": "Arcane description",
+      "Español": "Descripción de arcano",
+    };
+
     return(
       <div className="results-wrapper">
           <div className="card-block">
@@ -19,14 +44,14 @@ class Result extends React.Component{
             <div className="arcane-image-div"><img className="arcane-image-img" src={cardImage}></img></div>
           </div>
           <div className="result-text">
-            <p className="arcane-meaning">Описание аркана:</p> 
+            <p className="arcane-meaning">{arcaneDesc[this.props.language]}</p> 
             <p className="arcane-description">{arcaneDescription}</p>
             <p className="arcane-meaning">{meaning}</p>
             <p className="arcane-description">{prediction}</p>
             <div className="in-life-paragraphs">
-              <p><span className="in-life">В любви и отношениях - </span><span>{love}</span></p>
-              <p><span className="in-life">В профессии - </span><span>{profession}</span></p>
-              <p><span className="in-life">В целом - </span><span>{generally}</span></p>
+              <p><span className="in-life">{inLove[this.props.language]}</span><span>{love}</span></p>
+              <p><span className="in-life">{InPofession[this.props.language]}</span><span>{profession}</span></p>
+              <p><span className="in-life">{InGeneral[this.props.language]}</span><span>{generally}</span></p>
             </div>
         </div>
       </div>
@@ -62,6 +87,10 @@ class Result extends React.Component{
     const ids = this.props.ids;
     if(this.props.language === "Русский"){
       predictions.push(...["Значение:", "Эмоции:", "Предложение:", "Перспективы:"]);
+    }else if(this.props.language === "English"){
+      predictions.push(...["Meaning:", "Emotions:", "Proposal:", "Perspectives:"]);
+    }else if(this.props.language === "Español"){
+      predictions.push(...["Significación:", "Emociones:", "Consejo:", "Perspectives:"]);
     }
 
     if(this.props.ids.length === 10){
@@ -179,11 +208,11 @@ class Result extends React.Component{
     // return(
       
     //   <div className="celtic-cross-results">
-    //       {this.generateOneCardResult(CardsRus[17 - 1].name, WaiteIMGs[17 - 1].image, CardsRus[17 - 1].description, CardsRus[17 - 1].meaning, "Не делайте этого:", CardsRus[17 - 1].love.split('-')[1], CardsRus[17 - 1].profession.split('-')[1], CardsRus[17 - 1].generally.split('-').slice(1).join('-'))};
-    //       {this.generateOneCardResult(CardsRus[5 - 1].name, WaiteIMGs[5 - 1].image, CardsRus[5 - 1].description, CardsRus[5 - 1].meaning, "Сейчас этого делать не стоит", CardsRus[5 - 1].love.split('-')[1], CardsRus[5 - 1].profession.split('-')[1], CardsRus[5 - 1].generally.split('-').slice(1).join('-'))};
-    //       {this.generateOneCardResult(CardsRus[6 - 1].name, WaiteIMGs[6 - 1].image, CardsRus[6 - 1].description, CardsRus[6 - 1].meaning, "Сейчас этого делать не стоит", CardsRus[6 - 1].love.split('-')[1], CardsRus[6 - 1].profession.split('-')[1], CardsRus[6 - 1].generally.split('-').slice(1).join('-'))};
-    //       {this.generateOneCardResult(CardsRus[15 - 1].name, WaiteIMGs[15 - 1].image, CardsRus[15 - 1].description, CardsRus[15 - 1].meaning, "Сейчас этого делать не стоит", CardsRus[15 - 1].love.split('-')[1], CardsRus[15 - 1].profession.split('-')[1], CardsRus[15 - 1].generally.split('-').slice(1).join('-'))};
-    //       {this.generateOneCardResult(CardsRus[37 - 1].name, WaiteIMGs[37 - 1].image, CardsRus[37 - 1].description, CardsRus[37 - 1].meaning, "Сейчас этого делать не стоит", CardsRus[37 - 1].love.split('-')[1], CardsRus[37 - 1].profession.split('-')[1], CardsRus[37 - 1].generally.split('-').slice(1).join('-'))};
+    //       {this.generateOneCardResult(CardsEng[1 - 1].name, WaiteIMGs[1 - 1].image, CardsEng[1 - 1].description, CardsEng[1 - 1].meaning, "Не делайте этого:", CardsEng[1 - 1].love.split('-')[1], CardsEng[1 - 1].profession.split('-').slice(1).join('-'), CardsEng[1 - 1].generally.split('-').slice(1).join('-'))};
+    //       {/* {/* {this.generateOneCardResult(CardsEng[5 - 1].name, WaiteIMGs[5 - 1].image, CardsEng[5 - 1].description, CardsEng[5 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[5 - 1].love.split('-')[1], CardsEng[5 - 1].profession.split('-')[1], CardsEng[5 - 1].generally.split('-').slice(1).join('-'))}; */}
+    //       {this.generateOneCardResult(CardsEng[6 - 1].name, WaiteIMGs[6 - 1].image, CardsEng[6 - 1].description, CardsEng[6 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[6 - 1].love.split('-')[1], CardsEng[6 - 1].profession.split('-')[1], CardsEng[6 - 1].generally.split('-').slice(1).join('-'))};
+    //       {this.generateOneCardResult(CardsEng[15 - 1].name, WaiteIMGs[15 - 1].image, CardsEng[15 - 1].description, CardsEng[15 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[15 - 1].love.split('-')[1], CardsEng[15 - 1].profession.split('-')[1], CardsEng[15 - 1].generally.split('-').slice(1).join('-'))};
+    //       {this.generateOneCardResult(CardsEng[37 - 1].name, WaiteIMGs[37 - 1].image, CardsEng[37 - 1].description, CardsEng[37 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[37 - 1].love.split('-')[1], CardsEng[37 - 1].profession.split('-')[1], CardsEng[37 - 1].generally.split('-').slice(1).join('-'))}; */}
           
     //     </div>
     // )

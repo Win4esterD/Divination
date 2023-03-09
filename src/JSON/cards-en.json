@@ -1,15 +1,16 @@
 [
   {
     "id": 1,
-    "name": "Шут",
-    "description": " Шут символизирует любознательность, открытость, готовность к экспериментам и спонтанным поступкам. Он способен импровизировать, он также может вносить в жизнь неожиданность и хаос.",
-    "meaning": "Нововое начинание, любознательность, открытость чему-то новому в жизни, спонтанные поступки. Открытость, надвигающийся хаос, желание попробовать что-то новое и неожиданное.",
-    "emotions": "Вы относитесь к теме вопроса с любопытством и охвачены желанием попробовать всё, что возможно.",
-    "proposal": "Забудьте обо всех заботах и планах, оставьте какую-либо серьёзность и всю осторожность. Попробуйте что-нибудь новое. Идите вперёд беззаботно и доверьтесь своим инстинктам, которые уберегут вас в случае опасности.",
-    "perspectives": "Перед Вами лежит новое начинание, для вас открыты все двери. Если Вы готовы к спонтанно реагировать и охотно импровизировать, это начинание будет весьма жизнеспособно и доставит Вам большую радость.",
-    "love": "В любви и отношениях - слабость, радость и игру.",
-    "profession": "В профессии - новое начало, дилетантизм.",
-    "generally": "В целом - беззаботность, новое начинание и хаос."
+    "name": "The Fool",
+    "description": " The Fool symbolizes curiosity, open mind, alacrity for the experiments and spontaneous actions. He is capable of improvising, he also might cause unexpectedness and chaos.",
+    "meaning": "New start, curiosity, openness to something new in the life, spontaneous actions. Openness, oncoming chaos, desire to try something new and sudden.",
+    "emotions": "You approach the subject matter with curiosity and a desire to try everything new.",
+    "proposal": "Forget about all worries and plans, leave any seriousness and all caution. Try something new. Go forward carefree and trust your instincts to keep you safe in case of danger.",
+    "perspectives": "Before you lies a new undertaking, all doors are opened for you. If you are ready to react spontaneously and improvise willingly, this undertaking will be very viable and will bring you great joy.",
+    "love": "In love and relationships - weakness, joy and playfulness.",
+    "profession": "In profession - new start, amateurism",
+    "generally": " In general - carelessness, new beginnings and chaos."
+
   },
   {
     "id": 2,
