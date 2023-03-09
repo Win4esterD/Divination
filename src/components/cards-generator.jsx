@@ -40,9 +40,9 @@ class CardsGenerator extends React.Component{
       this.props.collectIds(card.id);
       this.props.increaseCounter();
       card.style.display = "none";
+      }
     }
-    
-  }
+  
 
   //generates cards, where "num" is id of the card to be generated
   generateOneCard(num){

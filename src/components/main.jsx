@@ -6,6 +6,8 @@ import CardsGenerator from './cards-generator';
 import Layout from './Layout';
 import Result from './Result';
 import cardsRus from "../JSON/cards-rus.json";
+import cardsEng from "../JSON/cards-en.json";
+import cardsEsp from "../JSON/cards-es.json";
 
 class Main extends React.Component{
 
@@ -27,11 +29,12 @@ class Main extends React.Component{
     this.getLayout = this.getLayout.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount(){ 
     const language = document.querySelector('.language');
     this.determineLanguage(language.value)
     language.addEventListener('change', () => {
       this.determineLanguage(language.value);
+      this.setInterfaceLanguage();
     });
   }
 
@@ -41,16 +44,51 @@ class Main extends React.Component{
       this.state.deck = cardsRus;
       this.state.language = value;
       this.setState({language: value});
+      this.setInterfaceLanguage(this.state.language);
     }else if(value === "English"){
-      this.setState({deck: cardsRus});
-      this.state.deck = cardsRus;
+      this.setState({deck: cardsEng});
+      this.state.deck = cardsEng;
       this.state.language = value;
       this.setState({language: value});
+      this.setInterfaceLanguage(this.state.language);
     }else if(value === "Español"){
-      this.setState({deck: cardsRus});
-      this.state.deck = cardsRus;
+      this.setState({deck: cardsEsp});
+      this.state.deck = cardsEsp;
       this.state.language = value;
       this.setState({language: value});
+      this.setInterfaceLanguage(this.state.language);
+    }
+  }
+
+  //Sets language for the interface elements
+  setInterfaceLanguage(language){
+    const headerUl = document.querySelector('.header__ul');
+    const layouts = document.querySelector('.layouts');
+
+    if(language === "English"){
+      headerUl.firstChild.innerHTML = "Tarot theory";
+      headerUl.firstChild.nextSibling.firstChild.innerHTML = "Layouts: ";
+      layouts[0].innerHTML = "Celtic Cross";
+      layouts[1].innerHTML = "Cross";
+      layouts[2].innerHTML = "Love Oracle";
+      layouts[3].innerHTML = "Compas";
+      headerUl.lastChild.firstChild.innerHTML = "Language: ";
+    }else if (language === "Русский"){
+      headerUl.firstChild.innerHTML = "Теория Таро";
+      headerUl.firstChild.nextSibling.firstChild.innerHTML = "Расклады: ";
+      layouts[0].innerHTML = "Кельтский Крест";
+      layouts[1].innerHTML = "Крест";
+      layouts[2].innerHTML = "Оракул Любви";
+      layouts[3].innerHTML = "Компас";
+      headerUl.lastChild.firstChild.innerHTML = "Язык: ";
+    }else if(language === "Español"){
+      headerUl.firstChild.innerHTML = "Teoría Del Tarot";
+      headerUl.firstChild.nextSibling.firstChild.innerHTML = "Correlaciones: ";
+      layouts[0].innerHTML = "Cruz Celta";
+      layouts[1].innerHTML = "Cruz";
+      layouts[2].innerHTML = "Oráculo de Amor";
+      layouts[3].innerHTML = "Compás";
+      headerUl.lastChild.firstChild.innerHTML = "Lengua: ";
     }
   }
 
@@ -60,6 +98,7 @@ class Main extends React.Component{
 
   resetIds(){
     this.state.ids = [];
+    this.setState({ids: []});
   }
 
   resetCounter(){
@@ -84,7 +123,7 @@ class Main extends React.Component{
           <CardsGenerator collectIds={this.collectIds} resetIds={this.resetIds} counter={this.state.counter} increaseCounter={this.increaseCounter} resetCounter={this.resetCounter}/>
         </section>
         <section className="results">
-          <Result ids={this.state.ids} layout={this.state.layout} cards={this.state.deck} language={this.state.language}/>
+          <Result ids={this.state.ids} layout={this.state.layout} cards={this.state.deck} language={this.state.language} resetIds={this.resetIds} resetCounter={this.resetCounter}/>
         </section>
       </main>
     )

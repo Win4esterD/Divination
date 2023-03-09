@@ -62,9 +62,9 @@ class Header extends React.Component{
             <li className="header__li">
               <span>Язык: </span>
               <select className="language">
-                <option className="language__option">Русский</option>
-                <option className="language__option">English</option>
-                <option className="language__option">Español</option>
+                <option value="Русский" className="language__option">Русский</option>
+                <option value="English" selected className="language__option">English</option>
+                <option value="Español" className="language__option">Español</option>
               </select>
             </li>
           </ul>

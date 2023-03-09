@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.reset-button{
+  position: relative;
+  left: 38vw;
+  background: #eded0d;
+  font-family: $main-font;
+  font-size: 1.2em;
+  width: 144px;
+  height: 49px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 20px;
+  margin: 6em 0 1.5em 0;
+}
+
+.reset-button:hover{
+  cursor: pointer;
+  background: rgb(38, 153, 38);
+  transition: .5s;
+}
+
+@media (max-width: 1152px){
+  .reset-button{
+    left: 50vw;
+  }
+}
+
+@media(max-width: 894px){
+  .reset-button{
+    margin-top: 2em;
+    font-size: 1em;
+    width: 130px;
+    height: 49px;
+  }
+}
+
+@media(max-width: 782px){
+  .reset-button{
+    margin-top: 4em;
+  }
+}
+
+@media (max-width: 560px){
+  .reset-button {
+    left: 36vw;
+  }
+}
