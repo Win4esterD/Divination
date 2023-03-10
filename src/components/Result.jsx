@@ -2,7 +2,10 @@ import React from 'react';
 import '../styles/results.scss';
 import WaiteIMGs from "../JSON/waite-images.json";
 import ResetButtom from './Reset-button';
+
+
 import CardsEng from '../JSON/cards-en.json';
+import CardsRus from '../JSON/cards-rus.json';
 
 
 class Result extends React.Component{
@@ -180,6 +183,28 @@ class Result extends React.Component{
       )
     }
   }
+
+
+  //This function only serves for the tests, to generate all the cards in a deck
+  showAllCardsInResults(deck){
+    const predictions = [];
+    if(this.props.language === "Русский"){
+      predictions.push(...["Значение:", "Эмоции:", "Предложение:", "Перспективы:"]);
+    }else if(this.props.language === "English"){
+      predictions.push(...["Meaning:", "Emotions:", "Proposal:", "Perspectives:"]);
+    }else if(this.props.language === "Español"){
+      predictions.push(...["Significación:", "Emociones:", "Consejo:", "Perspectives:"]);
+    }
+    
+
+    return(
+      <div className="all-cards-result">
+        {deck.map((card, index) => {
+          return this.generateOneCardResult(card.name, WaiteIMGs[index].image, card.description, card.meaning, predictions[0], card.love.split('-').slice(1).join('-'), card.profession.split('-').slice(1).join('-'), card.generally.split('-').slice(1).join('-'))
+        })}
+      </div>
+    )
+  }
   
   render(){
     if(this.props.layout === "Celtic Cross"){
@@ -204,16 +229,11 @@ class Result extends React.Component{
       )
     }
 
-    //This block is kept to use it, if I need to fix bugs of adaptive design of the results section
+
+    //To use when generation of all cards in a deck needed
     // return(
-      
-    //   <div className="celtic-cross-results">
-    //       {this.generateOneCardResult(CardsEng[1 - 1].name, WaiteIMGs[1 - 1].image, CardsEng[1 - 1].description, CardsEng[1 - 1].meaning, "Не делайте этого:", CardsEng[1 - 1].love.split('-')[1], CardsEng[1 - 1].profession.split('-').slice(1).join('-'), CardsEng[1 - 1].generally.split('-').slice(1).join('-'))};
-    //       {/* {/* {this.generateOneCardResult(CardsEng[5 - 1].name, WaiteIMGs[5 - 1].image, CardsEng[5 - 1].description, CardsEng[5 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[5 - 1].love.split('-')[1], CardsEng[5 - 1].profession.split('-')[1], CardsEng[5 - 1].generally.split('-').slice(1).join('-'))}; */}
-    //       {this.generateOneCardResult(CardsEng[6 - 1].name, WaiteIMGs[6 - 1].image, CardsEng[6 - 1].description, CardsEng[6 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[6 - 1].love.split('-')[1], CardsEng[6 - 1].profession.split('-')[1], CardsEng[6 - 1].generally.split('-').slice(1).join('-'))};
-    //       {this.generateOneCardResult(CardsEng[15 - 1].name, WaiteIMGs[15 - 1].image, CardsEng[15 - 1].description, CardsEng[15 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[15 - 1].love.split('-')[1], CardsEng[15 - 1].profession.split('-')[1], CardsEng[15 - 1].generally.split('-').slice(1).join('-'))};
-    //       {this.generateOneCardResult(CardsEng[37 - 1].name, WaiteIMGs[37 - 1].image, CardsEng[37 - 1].description, CardsEng[37 - 1].meaning, "Сейчас этого делать не стоит", CardsEng[37 - 1].love.split('-')[1], CardsEng[37 - 1].profession.split('-')[1], CardsEng[37 - 1].generally.split('-').slice(1).join('-'))}; */}
-          
+    //   <div>
+    //     {this.showAllCardsInResults(CardsRus)};
     //     </div>
     // )
     
