@@ -309,7 +309,7 @@
     "perspectives": "You can feel confident and open. You will be welcome everywhere.",
     "love": "In love and relationships - openness to each other, security, joyful mood.",
     "profession": "In profession - joy, happiness, openness, new contacts.",
-    "generally": "In general - being welcomed and welcoming the others, joy."
+    "generally": "In general - being welcomed and welcoming others, joy."
   },
   {
     "id": 27,
@@ -345,7 +345,7 @@
     "perspectives": "You will be attacked, contesting some outcome. If you stay alert and defend decisively, you will win.",
     "love": "In love and relationships - quarrel, jealousy, threat.",
     "profession": "In profession - the need to defend one's position or point of view.",
-    "generally": "In general - the envy and evil will of the others, the need to hold the line."
+    "generally": "In general - the envy and evil will of others, the need to hold the line."
   },
   {
     "id": 30,
@@ -601,51 +601,51 @@
   },
   {
     "id": 51,
-    "name": "Туз кубков",
-    "description": "Каждому Тузу предоставляется свой шанс. Туз кубков даёт шанс на обретение счастья, мира, любви и удовлетворения.",
-    "meaning": "Хороший шанс, который Вам выпадает. Реализовав его, Вы найдёте счастье и удовлетворение.",
-    "emotions": "Вы видите в теме вопроса шанс обрести счастье, взаимопонимание и любовь или получить нечто, чего Вы сильно желаете.",
-    "proposal": "Осознайте, что перед Вами лежит уникальный шанс. Сейчас у Вас есть возможность найти своё призвание, большую любовь или что-то другое, что Вы желаете сильнее всего.",
-    "perspectives": "Вас ожидает счастливое известие. Вам выпадает шанс найти любовь, обрести мир и радость.",
-    "love": "В любви и отношениях - великая любовь и счастливые времена совсем близко.",
-    "profession": "В профессии - шанс следовать своему призванию и найти в нём удовлетворение.",
-    "generally": "В целом - шанс найти своё счастье и глубокое удовлетворение."
+    "name": "Ace of Cups",
+    "description": "Each Ace is given a chance. The Ace of Cups gives a chance to find happiness, peace, love and contentment.",
+    "meaning": "This is a good chance that you have. If you take it, you will find happiness and satisfaction.",
+    "emotions": "You see the topic as a chance to find happiness, understanding and love, or to get something you really desire.",
+    "proposal": "Realize that a unique chance is before you. Now it is your chance to find your vocation, great love, or whatever you desire the most.",
+    "perspectives": "Good news awaits for you. You have a chance to find love, peace and joy.",
+    "love": "In love and relationships - great love and happy times are just around the corner.",
+    "profession": "In profession - a chance to follow your calling and find fulfillment in it.",
+    "generally": "In general - a chance to find happiness and deep satisfaction."
   },
   {
     "id": 52,
-    "name": "Двойка кубков",
-    "description": "Двойка Кубков символизирует тёплую встречу, примирение и соединение.",
-    "meaning": "Общность, любовь или любой другой союз.",
-    "emotions": "Вы позитивно относитесь к теме вопроса и готовы охотно сделать шаг навстречу людям или ситуации.",
-    "proposal": "Настройтесь примирительно и кооперируйтесь с людьми. Идите навстречу другим и заключите с кем-нибудь союз.",
-    "perspectives": "Вы будете идти по своему пути не один, а в союзе с кем-то. Любовный союз или сотрудничество - в любом случае это приятная связь.",
-    "love": "В любви и отношениях - влюбиться, примириться, делать что-то общее.",
-    "profession": "В профессии - объединяться, кооперироваться, быть желанным.",
-    "generally": "В целом - тёплая встреча, шаг навстречу друг другу, заключение мира."
+    "name": "Two of Cups",
+    "description": "The Two of Cups symbolizes a warm welcome, reconciliation and connection.",
+    "meaning": "Community, love, mutual understanding, or any other union.",
+    "emotions": "You have a positive attitude towards the topic and are ready to willingly take a step towards people or situations.",
+    "proposal": "Be conciliatory and cooperate with people. Go towards others and form an alliance with someone.",
+    "perspectives": "You will walk your path not alone, but in alliance with someone. A love alliance or cooperation - either way, it's a pleasant relationship.",
+    "love": "In love and relationships - fall in love, reconcile, do something together.",
+    "profession": "In profession - to unite, cooperate, be desired.",
+    "generally": "In general - a warm welcome, a step towards each other, making peace."
   },
   {
     "id": 53,
-    "name": "Тройка кубков",
-    "description": "Тройка Кубков показывает, что успех достигнут и потому сопровождается счастьем, благодарностью и довольством.",
-    "meaning": "Достижение чего-то хорошего, радость и благодарность.",
-    "emotions": "Вы очень позитивно относитесь к теме вопроса. Вы действительно высоко цените достигнутое и испытываете чувство благодарности.",
-    "proposal": "Будьте благодарны за то, что Вы получили, и разделите свою радость с окружающими.",
-    "perspectives": "Вы будете счастливы, удовлетворены и благодарны за то, что Вы достигните и получите.",
-    "love": "В любви и отношениях - большое счастье и благодарность, свадьба, материнство.",
-    "profession": "В профессии - радость от хорошей сделки и успешного шага.",
-    "generally": "В целом - успех и благодарность, выздоровление, возможность разделить свою радость с другими."
+    "name": "Three of Cups",
+    "description": "The Three of Cups signifies that success has been achieved and is therefore accompanied by happiness, gratitude and contentment.",
+    "meaning": "Achievement something good, joy and gratitude.",
+    "emotions": "You are very positive about the topic. You really appreciate what you have achieved and feel grateful.",
+    "proposal": "Be grateful for what you have received and share your joy with those around you.",
+    "perspectives": "You will be happy, satisfied and grateful for what you achieve and receive.",
+    "love": "In love and relationships - great happiness and gratitude, marriage, motherhood.",
+    "profession": "In profession - the joy of a good deal and a successful step.",
+    "generally": "In general - success and gratitude, recovery, the opportunity to share your joy with others."
   },
   {
     "id": 54,
-    "name": "Четвёрка кубков",
-    "description": "Четвёрка Кубков показывает пересыщение тем, что ещё недавно воспринималось как источник радости. Также карта предостерегает от сомнительных удовольствия.",
-    "meaning": "Досада, разочарование, ощущение себя оскорблённым.",
-    "emotions": "Вы испытываете разочарование и хотели бы никогда не возвращаться к теме вопроса.",
-    "proposal": "Если Вы чувствуете себя уязвлённым и раздосадованным, или Вам просто всё надоело, побудьте временно в уединении. Не возвращайтесь к ситуации, которая доставляет Вам расстройство или утомление, а иначе тот шанс, который Вам выпадет, покажется Вам нежеланным.",
-    "perspectives": "На этом пути Вас ожидают досада и разочарование. Если Вы всё же пойдёте по нему, Вы должны следить за перепадами своего настроения и быть очень внимательными. Тогда Вы не упустите свой шанс.",
-    "love": "В любви и отношениях - летаргия чувств, пересыщение.",
-    "profession": "В профессии - раздражение, неудовлетворённость, комплекс примадонны, узколобость, упрямство.",
-    "generally": "В целом - неудовольствие, глубокая обида, упущенный из упрямства ценный шанс."
+    "name": "Four of Cups",
+    "description": "The Four of Cups shows an oversaturation of what until recently was perceived as a source of joy. It also warns against dubious pleasures.",
+    "meaning": "Vexation, disappointment, feeling offended.",
+    "emotions": "You are bored, fed up with the topic and tired of it.",
+    "proposal": "If you're feeling hurt and annoyed, or just tired of everything, take a moment of seclusion. Don't go back to a situation that upsets or exhausts you, or the chance you're given will seem unwelcome.",
+    "perspectives": "Frustration and disappointment await you along the way, caused by boredom or emotional outburn. If you do go down this path, you must watch your mood swings and be very careful. Then you will not miss your chance.",
+    "love": "In love and relationships - lethargy of feelings, oversaturation.",
+    "profession": "In profession - irritation, emotional outburn, tiredness.",
+    "generally": "In general - displeasure, deep resentment, a valuable opportunity missed out of being bored, tired, fed up with something."
   },
   {
     "id": 55,
