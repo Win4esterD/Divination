@@ -230,7 +230,8 @@ class Result extends React.Component{
     }
 
 
-    //To use when generation of all cards in a deck needed
+    // To use when generation of all cards in a deck needed
+
     // return(
     //   <div>
     //     {this.showAllCardsInResults(CardsRus)};

@@ -6,7 +6,7 @@ class CardsGenerator extends React.Component{
   constructor(props){
     super(props);
 
-    this.cardSound = new Audio('../assets/audio/card-fly.mp3');
+    this.cardSound = new Audio('./assets/audio/card-fly.mp3');
 
     this.revealCard = this.revealCard.bind(this);
   }

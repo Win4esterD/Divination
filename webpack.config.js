@@ -10,7 +10,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    // publicPath: "/tarot-divination/"
   },
   devServer: {
     static: './dist',
@@ -82,7 +83,8 @@ module.exports = {
   },
 
   performance: {
-    hints: false
+    maxEntrypointSize: 999000,
+    maxAssetSize: 99999000
   },
 
 }
