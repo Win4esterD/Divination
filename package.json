@@ -8,8 +8,7 @@
     "test": "test",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "serve": "webpack-dev-server --mode development --open",
-    "deploy": "gh-pages -d dist"
+    "serve": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -36,7 +35,6 @@
     "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.2.0",
-    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^2.7.2",
