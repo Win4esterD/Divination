@@ -33,7 +33,7 @@
     "proposal": "Everything has its time. Believe that everything will be fine and you will be in the right place at the right time, trusting your intuition.",
     "perspectives": "Things will go well if you trust your inner voice and give enough time to develop the topic.",
     "love": "In love and relationships - deep understanding, kinship of souls, harmony.",
-    "profession": "In the profession, instinctive confidence, dreams that are coming true.",
+    "profession": "In the profession - instinctive confidence, dreams that are coming true.",
     "generally": "In general - subtlety of feelings, patience, devotion, poise."
   },
   {
@@ -46,7 +46,7 @@
     "perspectives": "Your business will be given a good development. You will find fertile soil in which everything will grow and develop well.",
     "love": "In love and relationships - liveliness, novelty, uplift.",
     "profession": "In profession - good development, creative tasks, healthy basis.",
-    "generally": "In general, growth, obtaining fertile soil."
+    "generally": "In general - growth, obtaining fertile soil."
   },
   {
     "id": 5,
@@ -56,7 +56,7 @@
     "emotions": "You feel confident, independent and competent. You will take full responsibility to ensure that the topic of the question finds a concrete embodiment, receives a reliable basis and development.",
     "proposal": "Show yourself to be a responsible person and concentrate on the essential points of the issue. Go forward persistently without losing realism.",
     "perspectives": "You can achieve lasting and lasting results, implement plans and build something fundamental.",
-    "love": "In love and relationships, strong relationships, confidence.",
+    "love": "In love and relationships - strong relationships, confidence.",
     "profession": "In profession - clear goals, success.",
     "generally": "In general - the implementation of plans, mantaining order."
   },
@@ -271,7 +271,7 @@
     "emotions": "You are aware that the topic is a good chance for you. You are optimistic and determined to achieve your maximum.",
     "proposal": "Realize that the right opportunity is ahead. Grab it, but prepare for tough times ahead.",
     "perspectives": "In front of you lie true, one might even say, \"hot opportunities\", that you can successfully use with courage and enterprise.",
-    "love": "In love and relationships, a chance for new vitality, eventful, living times.",
+    "love": "In love and relationships - a chance for new vitality, eventful, living times.",
     "profession": "In propession - new opportunities, dynamics and enterprise.",
     "generally": "In general - a chance for self-development, courage and willpower."
   },
@@ -649,15 +649,15 @@
   },
   {
     "id": 55,
-    "name": "Пятёрка кубков",
-    "description": "Пятёрка Кубков показывает печаль и скорбь о том, что потерпело неудачу. Но есть ещё силы, поддерживающие спрашивающего, и если скорбь будет преодолена, то будут найдены выход из ситуации и новая цель.",
-    "meaning": "Разочарование, скорбь или прощание.",
-    "emotions": "Тема вопроса печалит Вас. Вы разочарованы, так как потерпели неудачу в том, что много для Вас значило.",
-    "proposal": "На этом пути Вас ожидает грусть. Набирайтесь мужества и идите этим пётём. И если Вы печальны, то можете не скрывать своих чувств.",
-    "perspectives": "Этот путь ведёт к разочарованию. Вы можете потерпеть неудачу.",
-    "love": "В любви и отношениях - любовная тоска, разочарование, потеря партнёра, одиночество.",
-    "profession": "В профессии - потери, серьёзные разочарования, тяжёлые времена, крах амбиций.",
-    "generally": "В целом - печаль, потери, заброшенность, разбитые надежды."
+    "name": "Five of Cups",
+    "description": "The Five of Cups shows sadness and sorrow for what has failed.",
+    "meaning": "Disappointment, grief or sad farewell.",
+    "emotions": "The topic makes you sad. You are disappointed because you failed in something that meant a lot to you.",
+    "proposal": "Sadness awaits you on this path. If it's possible, don't go that way.",
+    "perspectives": "This path leads to disappointment. You may fail.",
+    "love": "In love and relationships - lovesickness, disappointment, loss of a partner, loneliness.",
+    "profession": "In profession - losses, serious disappointments, hard times, collapse of ambitions.",
+    "generally": "In general - sadness, loss, abandonment, dashed hopes."
   },
   {
     "id": 56,
