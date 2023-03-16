@@ -1,6 +1,6 @@
 # Divination
 
-# Deployment link: https://win4esterd.github.io/Divination
+# Deployment link: https://divination-two.vercel.app/
 
 
 
