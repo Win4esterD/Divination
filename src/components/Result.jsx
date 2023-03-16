@@ -4,8 +4,9 @@ import WaiteIMGs from "../JSON/waite-images.json";
 import ResetButtom from './Reset-button';
 
 
-import CardsEng from '../JSON/cards-en.json';
-import CardsRus from '../JSON/cards-rus.json';
+// Use these only when you want to run tests, generating all the cards in a deck
+// import CardsEng from '../JSON/cards-en.json';
+// import CardsRus from '../JSON/cards-rus.json';
 
 
 class Result extends React.Component{
@@ -93,7 +94,7 @@ class Result extends React.Component{
     }else if(this.props.language === "English"){
       predictions.push(...["Meaning:", "Emotions:", "Proposal:", "Perspectives:"]);
     }else if(this.props.language === "Español"){
-      predictions.push(...["Significación:", "Emociones:", "Consejo:", "Perspectives:"]);
+      predictions.push(...["Significación:", "Emociones:", "Consejo:", "Perpectivas:"]);
     }
 
     if(this.props.ids.length === 10){
@@ -123,6 +124,10 @@ class Result extends React.Component{
     const ids = this.props.ids;
     if(this.props.language === "Русский"){
       predictions.push(...["Значение:", "Эмоции:", "Предложение:", "Перспективы:", "Не делайте этого:"]);
+    }else if(this.props.language === "English"){
+      predictions.push(...["Meaning:", "Emotions:", "Proposal:", "Perspectives:", "Don't do that:"]);
+    }else if(this.props.language === "Español"){
+      predictions.push(...["Significación:", "Emociones:", "Consejo:", "Perspectivas:", "No lo haga"]);
     }
 
     if(this.props.ids.length === 4){
@@ -145,6 +150,10 @@ class Result extends React.Component{
     const ids = this.props.ids;
     if(this.props.language === "Русский"){
       predictions.push(...["Значение:", "Ваши чувства:", "Чувства человека к Вам:", "Совет оракула:"]);
+    }else if(this.props.language === "English"){
+      predictions.push(...["Meaning:", "Your feelings:", "What the person feels to you:", "Oracle's proposal:"]);
+    }else if(this.props.language === "Español"){
+      predictions.push(...["Significación:", "Sentimientos de usted:", "Que siente la persona a usted:", "El conjeso de Oráculo:"]);
     }
 
     if(this.props.ids.length === 4){
@@ -167,7 +176,11 @@ class Result extends React.Component{
     const ids = this.props.ids;
 
     if(this.props.language === "Русский"){
-      predictions.push(...["Значение:", "Эмоции:", "Это будет в ближайшее время:", "К этому всё приведёт:"]);
+      predictions.push(...["Значение:", "Эмоции:", "Это будет в ближайшее время:", "К этому приведёт в результате:"]);
+    }else if(this.props.language === "English"){
+      predictions.push(...["Meaning:", "Emotions:", "This will happen soon:", "This will be the result:"]);
+    }else if(this.props.language === "Español"){
+      predictions.push(...["Significación:", "Emociones:", "Eso pasará pronto:", "Eso será en resultado:"]);
     }
 
     if(this.props.ids.length === 4){
