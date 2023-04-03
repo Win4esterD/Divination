@@ -340,7 +340,7 @@
     "name": "Seven of Wands",
     "description": "The Seven of Wands indicates that you or your position or your point of view is under attack, but your defense will be successful.",
     "meaning": "Presence of a position and successful defense of it against the attackers.",
-    "emotions": "You think you will be attacked and are determined to defend your position",
+    "emotions": "You think you will be attacked and are determined to defend your position.",
     "proposal": "Be on the lookout. There are envious persons and ill-wishers who are hostile to you and are preparing tricks. But you have a good chance of defeating them.",
     "perspectives": "You will be attacked, contesting some outcome. If you stay alert and defend decisively, you will win.",
     "love": "In love and relationships - quarrel, jealousy, threat.",
@@ -379,14 +379,14 @@
     "emotions": "You see the topic as a big burden, you're afraid it's too hard for you and you won't be able to reach your goal.",
     "proposal": "Arm yourself with stamina: the marathon race lies ahead of you. Be courageous, calm down and take the step forward, even if it seems hard to you.",
     "perspectives": "It will take a lot of effort from you, almost to the edge of your ability. Assume that you really have to do everything alone and that there is no one to shift the responsibility to.",
-    "love": "n love and relationships - pessimism, high demands, problem to get along with somebody.",
+    "love": "In love and relationships - pessimism, high demands, problem to get along with somebody.",
     "profession": "In profession - overload, waste of energy, doing everything alone.",
     "generally": "In general - oppressive, unclear prospects."
   },
   {
     "id": 33,
     "name": "Page of Wands",
-    "description": "he Page of Wands symbolizes good, energetic chances and motivating impulses that come from outside and will be received with enthusiasm.",
+    "description": "The Page of Wands symbolizes good, energetic chances and motivating impulses that come from outside and will be received with enthusiasm.",
     "meaning": "Favorable, outstanding odds are presented.",
     "emotions": "You see real, maybe even \"hot chances\" in the topic that inspire you. You are open, allow yourself to be motivated and even carried away.",
     "proposal": "Wait and show yourself open to the chance that is given to you and that will inspire you.",
@@ -405,7 +405,7 @@
     "perspectives": "There is a dynamic phase, during which a lot of things will happen. It will be hot and lively.",
     "love": "In love and relationships - hot times, thirst for experiences, passion, adventure.",
     "profession": "In profession - adventurous spirit, an entrepreneurial spirit, impatience and a heated atmosphere.",
-    "generally": "In general - hot-blooded, impatience, risk-taking, adventure, hot climate.."
+    "generally": "In general - hot-blooded, impatience, risk-taking, adventure, hot climate."
   },
   {
     "id": 35,
