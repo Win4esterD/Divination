@@ -4,6 +4,7 @@ import WaiteIMGs from "../JSON/waite-images.json";
 import ResetButtom from './Reset-button';
 
 
+
 // Use these only when you want to run tests, generating all the cards in a deck
 // import CardsEng from '../JSON/cards-en.json';
 // import CardsRus from '../JSON/cards-rus.json';
@@ -247,7 +248,7 @@ class Result extends React.Component{
 
     // return(
     //   <div>
-    //     {this.showAllCardsInResults(CardsRus)};
+    //     {this.showAllCardsInResults(cardsEsp)};
     //     </div>
     // )
     
