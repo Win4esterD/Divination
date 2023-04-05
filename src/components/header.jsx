@@ -12,7 +12,7 @@ class Header extends React.Component{
 
   componentDidMount(){
     window.addEventListener('resize', this.resizeHandler);
-    // this.selectLayout();
+    this.saveLayout();
   }
 
   resizeHandler(){
@@ -43,7 +43,7 @@ class Header extends React.Component{
     }
   }
 
-  selectLayout(){
+  saveLayout(){
     const layout = document.querySelector('.layouts');
     if(localStorage.getItem('layoutNumber')){
       layout.value = layout[localStorage.getItem('layoutNumber')].value;

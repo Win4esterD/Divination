@@ -16,7 +16,7 @@ class Layout extends React.Component{
     }
 
     this.state = {
-      layout: this.layoutFunctions['Celtic Cross'],
+      layout: this.layoutFunctions[localStorage.getItem('layout')? localStorage.getItem('layout'): 'Celtic Cross'],
     }
   }
 

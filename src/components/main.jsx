@@ -5,6 +5,7 @@ import RitualSubjects from './ritual-subjects';
 import CardsGenerator from './cards-generator';
 import Layout from './Layout';
 import Result from './Result';
+import GreetingsMenu from './greetings';
 import cardsRus from "../JSON/cards-rus.json";
 import cardsEng from "../JSON/cards-en.json";
 import cardsEsp from "../JSON/cards-es.json";
@@ -14,7 +15,7 @@ class Main extends React.Component{
   state = {
     ids: [],
     counter: 0,
-    layout: "Celtic Cross",
+    layout: localStorage.getItem('layout')? localStorage.getItem('layout'): "Celtic Cross",
     deck: '',
     language: localStorage.getItem('language')? localStorage.getItem('language'): 'English',
   }
@@ -127,6 +128,7 @@ class Main extends React.Component{
     return (
       <main>
         <section className="ritual-table">
+          <GreetingsMenu />
           <RitualSubjects/>
           <Layout getLayout={this.getLayout} layout={this.state.layout}/>
           <CardsGenerator collectIds={this.collectIds} resetIds={this.resetIds} counter={this.state.counter} increaseCounter={this.increaseCounter} resetCounter={this.resetCounter}/>
