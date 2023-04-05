@@ -26,15 +26,23 @@ class Layout extends React.Component{
       if(layoutOption.value === layoutOption[0].value){
         this.setState({layout: this.celticCross()});
         this.props.getLayout('Celtic Cross');
+        localStorage.setItem('layoutNumber', 0)
+        localStorage.setItem('layout', 'Celtic Cross')
       }else if(layoutOption.value === layoutOption[1].value){
         this.setState({layout: this.cross()});
         this.props.getLayout('Cross');
+        localStorage.setItem('layoutNumber', 1);
+        localStorage.setItem('layout', 'Cross');
       }else if(layoutOption.value === layoutOption[2].value){
         this.setState({layout: this.loveOracle()});
         this.props.getLayout('Love Oracle');
+        localStorage.setItem('layoutNumber', 2);
+        localStorage.setItem('layout', 'Love Oracle');
       }else if(layoutOption.value === layoutOption[3].value){
         this.setState({layout: this.compas()});
         this.props.getLayout('Compas');
+        localStorage.setItem('layoutNumber', 3);
+        localStorage.setItem('layout', 'Compas');
       }
     })
   }

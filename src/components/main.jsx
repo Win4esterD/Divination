@@ -16,7 +16,7 @@ class Main extends React.Component{
     counter: 0,
     layout: "Celtic Cross",
     deck: '',
-    language: '',
+    language: localStorage.getItem('language')? localStorage.getItem('language'): 'English',
   }
 
 
@@ -31,7 +31,9 @@ class Main extends React.Component{
 
   componentDidMount(){ 
     const language = document.querySelector('.language');
-    this.determineLanguage(language.value)
+    this.determineLanguage(this.state.language);
+    this.setInterfaceLanguage(this.state.language);
+
     language.addEventListener('change', () => {
       this.determineLanguage(language.value);
       this.setInterfaceLanguage();
@@ -45,18 +47,21 @@ class Main extends React.Component{
       this.state.language = value;
       this.setState({language: value});
       this.setInterfaceLanguage(this.state.language);
+      localStorage.setItem('language', "Русский")
     }else if(value === "English"){
       this.setState({deck: cardsEng});
       this.state.deck = cardsEng;
       this.state.language = value;
       this.setState({language: value});
       this.setInterfaceLanguage(this.state.language);
+      localStorage.setItem('language', "English")
     }else if(value === "Español"){
       this.setState({deck: cardsEsp});
       this.state.deck = cardsEsp;
       this.state.language = value;
       this.setState({language: value});
       this.setInterfaceLanguage(this.state.language);
+      localStorage.setItem('language', "Español")
     }
   }
 
@@ -64,6 +69,7 @@ class Main extends React.Component{
   setInterfaceLanguage(language){
     const headerUl = document.querySelector('.header__ul');
     const layouts = document.querySelector('.layouts');
+    const lang = document.querySelector('.language');
 
     if(language === "English"){
       headerUl.firstChild.innerHTML = "Tarot theory";
@@ -73,6 +79,7 @@ class Main extends React.Component{
       layouts[2].innerHTML = "Love Oracle";
       layouts[3].innerHTML = "Compas";
       headerUl.lastChild.firstChild.innerHTML = "Language: ";
+      lang.value = language;
     }else if (language === "Русский"){
       headerUl.firstChild.innerHTML = "Теория Таро";
       headerUl.firstChild.nextSibling.firstChild.innerHTML = "Расклады: ";
@@ -81,6 +88,7 @@ class Main extends React.Component{
       layouts[2].innerHTML = "Оракул Любви";
       layouts[3].innerHTML = "Компас";
       headerUl.lastChild.firstChild.innerHTML = "Язык: ";
+      lang.value = language;
     }else if(language === "Español"){
       headerUl.firstChild.innerHTML = "Teoría Del Tarot";
       headerUl.firstChild.nextSibling.firstChild.innerHTML = "Correlaciones: ";
@@ -89,6 +97,7 @@ class Main extends React.Component{
       layouts[2].innerHTML = "Oráculo de Amor";
       layouts[3].innerHTML = "Compás";
       headerUl.lastChild.firstChild.innerHTML = "Lengua: ";
+      lang.value = language;
     }
   }
 

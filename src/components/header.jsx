@@ -12,6 +12,7 @@ class Header extends React.Component{
 
   componentDidMount(){
     window.addEventListener('resize', this.resizeHandler);
+    // this.selectLayout();
   }
 
   resizeHandler(){
@@ -42,6 +43,13 @@ class Header extends React.Component{
     }
   }
 
+  selectLayout(){
+    const layout = document.querySelector('.layouts');
+    if(localStorage.getItem('layoutNumber')){
+      layout.value = layout[localStorage.getItem('layoutNumber')].value;
+    }
+  }
+
   render(){
     return (
       <header>
@@ -63,7 +71,7 @@ class Header extends React.Component{
               <span>Язык: </span>
               <select className="language">
                 <option value="Русский" className="language__option">Русский</option>
-                <option value="English" selected className="language__option">English</option>
+                <option value="English" className="language__option">English</option>
                 <option value="Español" className="language__option">Español</option>
               </select>
             </li>
