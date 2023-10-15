@@ -1,6 +1,6 @@
 import * as React from "react";
-import Header from './components/header';
-import Main from './components/main';
+import Header from './components/Header';
+import Main from './components/Main';
 import Footer from './components/Footer';
 
 

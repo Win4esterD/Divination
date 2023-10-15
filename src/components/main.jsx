@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/ritual-table.scss';
 import '../styles/results.scss';
-import RitualSubjects from './ritual-subjects';
-import CardsGenerator from './cards-generator';
+import RitualSubjects from './RitualSubjects';
+import CardsGenerator from './CardGenerator';
 import Layout from './Layout';
 import Result from './Result';
-import GreetingsMenu from './greetings';
+import GreetingsMenu from './Greetings';
 import cardsRus from "../JSON/cards-rus.json";
 import cardsEng from "../JSON/cards-en.json";
 import cardsEsp from "../JSON/cards-es.json";
