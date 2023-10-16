@@ -4,8 +4,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 
-class App extends React.Component{
-  render(){
+const App = () => {
     return(
         <div className='site-wrapper'>
             <Header />
@@ -13,7 +12,6 @@ class App extends React.Component{
             <Footer />
           </div>
     )
-  }
 }
 
 export default App;
