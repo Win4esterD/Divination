@@ -1,7 +1,6 @@
 import React from 'react';
 
-class RitualSubjects extends React.Component{
-  render(){
+const RitualSubjects = () => {
     return (
       <div className="ritual-subjects">
         <div className="ritual-subjects__div main-pentagram">
@@ -34,7 +33,6 @@ class RitualSubjects extends React.Component{
         </div>
       </div>
     )
-  }
 }
 
 export default RitualSubjects;

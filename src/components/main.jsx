@@ -9,65 +9,85 @@ import GreetingsMenu from './Greetings';
 import cardsRus from "../JSON/cards-rus.json";
 import cardsEng from "../JSON/cards-en.json";
 import cardsEsp from "../JSON/cards-es.json";
+// import MainContext from '../context/MainContext';
+import { useState, useEffect} from 'react';
 
-class Main extends React.Component{
-
-  state = {
+const Main = () => {
+  const [state, setState] = useState({
     ids: [],
     counter: 0,
     layout: localStorage.getItem('layout')? localStorage.getItem('layout'): "Celtic Cross",
     deck: '',
     language: localStorage.getItem('language')? localStorage.getItem('language'): 'English',
-  }
+  });
+
+  // state = {
+  //   ids: [],
+  //   counter: 0,
+  //   layout: localStorage.getItem('layout')? localStorage.getItem('layout'): "Celtic Cross",
+  //   deck: '',
+  //   language: localStorage.getItem('language')? localStorage.getItem('language'): 'English',
+  // }
 
 
-  constructor(props){
-    super(props);
-    this.collectIds = this.collectIds.bind(this);
-    this.resetIds = this.resetIds.bind(this);
-    this.resetCounter = this.resetCounter.bind(this);
-    this.increaseCounter = this.increaseCounter.bind(this);
-    this.getLayout = this.getLayout.bind(this);
-  }
+  // constructor(props){
+  //   super(props);
+  //   collectIds = collectIds.bind(this);
+  //   resetIds = resetIds.bind(this);
+  //   resetCounter = resetCounter.bind(this);
+  //   increaseCounter = increaseCounter.bind(this);
+  //   getLayout = getLayout.bind(this);
+  // }
 
-  componentDidMount(){ 
+  // componentDidMount(){ 
+  //   const language = document.querySelector('.language');
+  //   determineLanguage(state.language);
+  //   setInterfaceLanguage(state.language);
+
+  //   language.addEventListener('change', () => {
+  //     determineLanguage(language.value);
+  //     setInterfaceLanguage();
+  //   });
+  // }
+
+   useEffect(() => {
     const language = document.querySelector('.language');
-    this.determineLanguage(this.state.language);
-    this.setInterfaceLanguage(this.state.language);
+    determineLanguage(state.language);
+    setInterfaceLanguage(state.language);
 
-    language.addEventListener('change', () => {
-      this.determineLanguage(language.value);
-      this.setInterfaceLanguage();
+      language.addEventListener('change', () => {
+      determineLanguage(language.value);
+      setInterfaceLanguage();
     });
-  }
+  }, []);
 
-  determineLanguage(value){
+  function determineLanguage(value){
     if(value === "Русский"){
-      this.setState({deck: cardsRus});
-      this.state.deck = cardsRus;
-      this.state.language = value;
-      this.setState({language: value});
-      this.setInterfaceLanguage(this.state.language);
+      setState({deck: cardsRus});
+      state.deck = cardsRus;
+      state.language = value;
+      setState({language: value});
+      setInterfaceLanguage(state.language);
       localStorage.setItem('language', "Русский")
     }else if(value === "English"){
-      this.setState({deck: cardsEng});
-      this.state.deck = cardsEng;
-      this.state.language = value;
-      this.setState({language: value});
-      this.setInterfaceLanguage(this.state.language);
+      setState({deck: cardsEng});
+      state.deck = cardsEng;
+      state.language = value;
+      setState({language: value});
+      setInterfaceLanguage(state.language);
       localStorage.setItem('language', "English")
     }else if(value === "Español"){
-      this.setState({deck: cardsEsp});
-      this.state.deck = cardsEsp;
-      this.state.language = value;
-      this.setState({language: value});
-      this.setInterfaceLanguage(this.state.language);
+      setState({deck: cardsEsp});
+      state.deck = cardsEsp;
+      state.language = value;
+      setState({language: value});
+      setInterfaceLanguage(state.language);
       localStorage.setItem('language', "Español")
     }
   }
 
   //Sets language for the interface elements
-  setInterfaceLanguage(language){
+  function setInterfaceLanguage(language){
     const headerUl = document.querySelector('.header__ul');
     const layouts = document.querySelector('.layouts');
     const lang = document.querySelector('.language');
@@ -102,43 +122,41 @@ class Main extends React.Component{
     }
   }
 
-  collectIds(value){
-    this.state.ids.push(value);
+  function collectIds(value){
+    state.ids.push(value);
   }
 
-  resetIds(){
-    this.state.ids = [];
-    this.setState({ids: []});
+  function resetIds(){
+    state.ids = [];
+    setState({ids: []});
   }
 
-  resetCounter(){
-    this.setState({counter: 0});
+  function resetCounter(){
+    setState({counter: 0});
   }
 
-  increaseCounter(){
-    this.setState({counter: this.state.counter + 1});
+  function increaseCounter(){
+    setState({counter: state.counter + 1});
   }
 
-  getLayout(value){
-    this.state.layout = value;
-    this.setState({layout: value});
+  function getLayout(value){
+    state.layout = value;
+    setState({layout: value});
   }
 
-  render(){
     return (
       <main>
         <section className="ritual-table">
           <GreetingsMenu />
           <RitualSubjects/>
-          <Layout getLayout={this.getLayout} layout={this.state.layout}/>
-          <CardsGenerator collectIds={this.collectIds} resetIds={this.resetIds} counter={this.state.counter} increaseCounter={this.increaseCounter} resetCounter={this.resetCounter}/>
+          <Layout getLayout={getLayout} layout={state.layout}/>
+          <CardsGenerator collectIds={collectIds} resetIds={resetIds} counter={state.counter} increaseCounter={increaseCounter} resetCounter={resetCounter}/>
         </section>
         <section className="results">
-          <Result ids={this.state.ids} layout={this.state.layout} cards={this.state.deck} language={this.state.language} resetIds={this.resetIds} resetCounter={this.resetCounter}/>
+          <Result ids={state.ids} layout={state.layout} cards={state.deck} language={state.language} resetIds={resetIds} resetCounter={resetCounter}/>
         </section>
       </main>
     )
-  }
 }
 
 export default Main;
