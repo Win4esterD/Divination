@@ -7,9 +7,7 @@ const Card = ({ id, clickHandler, className}) => {
   useEffect(() => {
     card.current.removeAttribute('style');
   }, [layout])
-  return (
-    <div className={className} id={id} onClick={clickHandler} ref={card}></div>
-  );
+  return <div className={className} id={id} onClick={clickHandler} ref={card}></div>;
 };
 
 export default Card;

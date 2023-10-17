@@ -2,17 +2,20 @@ import "../styles/header.scss";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 import layoutNames from "../variables/layoutNames";
+import interfaceLocalizations from "../variables/interfaceLocalizations";
 
-const Header = ({ setLayout, setLanguage }) => {
+const Header = ({ setLayout, setLanguage, language }) => {
   const [screenWidth, setScreenWidth] = useState(window.screen.width);
   const [isOpen, setIsOpen] = useState(false);
   const header = useRef(null);
   const list = useRef(null);
   const layout = useRef(null);
+  const langMenu = useRef(null);
 
   useEffect(() => {
     window.addEventListener("resize", resizeHandler);
-    saveLayout();
+    getLayout();
+    getLanguage();
     return () => window.removeEventListener("resize", resizeHandler);
   }, []);
 
@@ -32,10 +35,16 @@ const Header = ({ setLayout, setLanguage }) => {
     }
   }
 
-  function saveLayout() {
+  function getLayout() {
     if (localStorage.getItem("layoutNumber")) {
-      layout.current.value =
-        layout.current[localStorage.getItem("layoutNumber")].value;
+      layout.current.value = layout.current.value =
+        localStorage.getItem("layoutNumber");
+    }
+  }
+
+  function getLanguage() {
+    if (localStorage.getItem("language")) {
+      langMenu.current.value = localStorage.getItem("language");
     }
   }
 
@@ -51,10 +60,10 @@ const Header = ({ setLayout, setLanguage }) => {
           style={screenWidth > 496 ? { display: "flex" } : { display: "none" }}
         >
           <li className="header__li">
-            <a href="#">Теория ТАРО</a>
+            <a href="#">{interfaceLocalizations[language][0]}</a>
           </li>
           <li className="header__li">
-            <span>Расклады: </span>
+            <span>{interfaceLocalizations[language][1]}</span>
             <select
               className="layouts"
               ref={layout}
@@ -68,28 +77,29 @@ const Header = ({ setLayout, setLanguage }) => {
               }}
             >
               <option className="layouts__option 1" value="0">
-                Кельтский крест
+                {interfaceLocalizations[language][2]}
               </option>
               <option className="layouts__option 2" value="1">
-                Крест
+                {interfaceLocalizations[language][3]}
               </option>
               <option className="layouts__option 3" value="2">
-                Оракул любви
+                {interfaceLocalizations[language][4]}
               </option>
               <option className="layouts__option 4" value="3">
-                Компас
+                {interfaceLocalizations[language][5]}
               </option>
               {/* <option className="layouts__option">Следующий шаг</option>
                 <option className="layouts__option">Путь</option> */}
             </select>
           </li>
           <li className="header__li">
-            <span>Язык: </span>
+            <span>{interfaceLocalizations[language][6]}</span>
             <select
               className="language"
               onChange={(e) => {
                 setLanguage(e.target.value);
               }}
+              ref={langMenu}
             >
               <option value="Русский" className="language__option">
                 Русский

@@ -9,68 +9,49 @@ import GreetingsMenu from "./Greetings";
 import cardsRus from "../JSON/cards-rus.json";
 import cardsEng from "../JSON/cards-en.json";
 import cardsEsp from "../JSON/cards-es.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { cardSound } from "../variables/cardSound";
+import WaiteIMGs from "../JSON/waite-images.json";
+import MainContext from "../context/MainContext";
 
-const Main = ({ language, layout }) => {
+const Main = () => {
 
   const [ids, setIds] = useState([]);
-  const [counter, setCounter] = useState(0);
   const [deck, setDeck] = useState("");
+  const layoutCards = useRef(null);
+  const { counter, setCounter, language, layout } = useContext(MainContext);
 
+
+  
   useEffect(() => {
     determineLanguage(language);
-    setInterfaceLanguage(language);
   }, [language]);
 
   function determineLanguage(value) {
     if (value === "Русский") {
       setDeck(cardsRus);
-      setInterfaceLanguage(language);
       localStorage.setItem("language", "Русский");
     } else if (value === "English") {
       setDeck(cardsEng);
-      setInterfaceLanguage(language);
       localStorage.setItem("language", "English");
     } else if (value === "Español") {
       setDeck(cardsEsp);
-      setInterfaceLanguage(language);
       localStorage.setItem("language", "Español");
     }
   }
 
-  //Sets language for the interface elements
-  function setInterfaceLanguage(language) {
-    const headerUl = document.querySelector(".header__ul");
-    const layouts = document.querySelector(".layouts");
-    const lang = document.querySelector(".language");
+  function revealCard(event) {
+    const card = event.target;
+    const layoutLength = layoutCards.current.children.length;
+    if (counter < layoutLength) {
+      cardSound.play();
+      layoutCards.current.children[counter].style.backgroundImage = `url(${
+        WaiteIMGs[card.id - 1].image
+      })`;
+      collectIds(card.id);
+      increaseCounter();
 
-    if (language === "English") {
-      headerUl.firstChild.innerHTML = "Tarot theory";
-      headerUl.firstChild.nextSibling.firstChild.innerHTML = "Layouts: ";
-      layouts[0].innerHTML = "Celtic Cross";
-      layouts[1].innerHTML = "Cross";
-      layouts[2].innerHTML = "Love Oracle";
-      layouts[3].innerHTML = "Compas";
-      headerUl.lastChild.firstChild.innerHTML = "Language: ";
-      lang.value = language;
-    } else if (language === "Русский") {
-      headerUl.firstChild.innerHTML = "Теория Таро";
-      headerUl.firstChild.nextSibling.firstChild.innerHTML = "Расклады: ";
-      layouts[0].innerHTML = "Кельтский Крест";
-      layouts[1].innerHTML = "Крест";
-      layouts[2].innerHTML = "Оракул Любви";
-      layouts[3].innerHTML = "Компас";
-      headerUl.lastChild.firstChild.innerHTML = "Язык: ";
-      lang.value = language;
-    } else if (language === "Español") {
-      headerUl.firstChild.innerHTML = "Teoría Del Tarot";
-      headerUl.firstChild.nextSibling.firstChild.innerHTML = "Correlaciones: ";
-      layouts[0].innerHTML = "Cruz Celta";
-      layouts[1].innerHTML = "Cruz";
-      layouts[2].innerHTML = "Oráculo de Amor";
-      layouts[3].innerHTML = "Compás";
-      headerUl.lastChild.firstChild.innerHTML = "Lengua: ";
-      lang.value = language;
+      card.style.display = "none";
     }
   }
 
@@ -87,7 +68,7 @@ const Main = ({ language, layout }) => {
   }
 
   function increaseCounter() {
-    setCounter(counter => counter += 1);
+    setCounter(counter + 1);
   }
 
   return (
@@ -95,14 +76,15 @@ const Main = ({ language, layout }) => {
       <section className="ritual-table">
         <GreetingsMenu />
         <RitualSubjects />
-        <Layout />
+        <Layout ref={layoutCards}/>
         <CardsGenerator
           collectIds={collectIds}
           resetIds={resetIds}
-          counter={counter}
+          // counter={counter}
           increaseCounter={increaseCounter}
           resetCounter={resetCounter}
           layout={layout}
+          revealCard={revealCard}
         />
       </section>
       <section className="results">

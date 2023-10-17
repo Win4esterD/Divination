@@ -1,26 +1,28 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "../styles/layouts/celtic-cross.scss";
 import "../styles/layouts/cross.scss";
 import "../styles/layouts/love-oracle.scss";
 import "../styles/layouts/compas.scss";
 import Card from "./Card";
 import MainContext from "../context/MainContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
-const Layout = () => {
-
+const Layout = forwardRef(function Layout(_, ref){
   const layoutGenerator = {
     "Celtic Cross": celticCross(),
-    'Cross': cross(),
+    Cross: cross(),
     "Love Oracle": loveOracle(),
-    'Compas': compas(),
+    Compas: compas(),
   };
 
-  const  {layout}  = useContext(MainContext);
+
+
+
+  const { layout } = useContext(MainContext);
 
   function celticCross() {
     return (
-      <div className="celtic-cross">
+      <div className="celtic-cross" ref={ref}>
         <Card className={"card layout-card celtic-cross__1"} />
         <Card className={"card layout-card celtic-cross__2"} />
         <Card className={"card layout-card celtic-cross__3"} />
@@ -37,7 +39,7 @@ const Layout = () => {
 
   function cross() {
     return (
-      <div className="cross">
+      <div className="cross" ref={ref}>
         <Card className={"card layout-card layout-card cross__1"} />
         <Card className={"card layout-card layout-card cross__2"} />
         <Card className={"card layout-card layout-card cross__3"} />
@@ -48,7 +50,7 @@ const Layout = () => {
 
   function loveOracle() {
     return (
-      <div className="love-oracle">
+      <div className="love-oracle" ref={ref}>
         <Card className={"card layout-card love-oracle__1"} />
         <Card className={"card layout-card love-oracle__2"} />
         <Card className={"card layout-card love-oracle__3"} />
@@ -59,7 +61,7 @@ const Layout = () => {
 
   function compas() {
     return (
-      <div className="compas">
+      <div className="compas" ref={ref}>
         <Card className={"card layout-card compas__1"} />
         <Card className={"card layout-card compas__2"} />
         <Card className={"card layout-card compas__3"} />
@@ -68,7 +70,13 @@ const Layout = () => {
     );
   }
 
-  return <div className="layout">{layoutGenerator[layout]}</div>;
-};
+  return (
+    <div className="layout">
+      {layoutGenerator[layout]}
+    </div>
+  );
+})
+
+
 
 export default Layout;

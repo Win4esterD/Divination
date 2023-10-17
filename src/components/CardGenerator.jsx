@@ -41,22 +41,6 @@ const CardsGenerator = ({ resetIds, resetCounter, layout, revealCard }) => {
     return result;
   }
 
-  //Revealing cards
-  // function revealCard(event) {
-  //   const card = event.target;
-  //   const layoutCards = document.querySelectorAll(".layout-card");
-  //   if (counter < layoutCards.length) {
-  //     cardSound.play();
-
-  //     layoutCards[counter].style.backgroundImage = `url(${
-  //       WaiteIMGs[card.id - 1].image
-  //     })`;
-  //     collectIds(card.id);
-  //     increaseCounter();
-  //     card.style.display = "none";
-  //   }
-  // }
-
   const allCards = useMemo(generateAllCards, [layout]);
 
   return (
