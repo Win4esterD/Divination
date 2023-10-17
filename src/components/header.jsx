@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState, useRef } from "react";
 import layoutNames from "../variables/layoutNames";
 
-const Header = ({ setLayout }) => {
+const Header = ({ setLayout, setLanguage }) => {
   const [screenWidth, setScreenWidth] = useState(window.screen.width);
   const [isOpen, setIsOpen] = useState(false);
   const header = useRef(null);
@@ -15,7 +15,6 @@ const Header = ({ setLayout }) => {
     saveLayout();
     return () => window.removeEventListener("resize", resizeHandler);
   }, []);
-
 
   function resizeHandler() {
     setScreenWidth(window.screen.width);
@@ -86,7 +85,12 @@ const Header = ({ setLayout }) => {
           </li>
           <li className="header__li">
             <span>Язык: </span>
-            <select className="language">
+            <select
+              className="language"
+              onChange={(e) => {
+                setLanguage(e.target.value);
+              }}
+            >
               <option value="Русский" className="language__option">
                 Русский
               </option>

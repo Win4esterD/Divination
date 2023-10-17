@@ -12,11 +12,13 @@ const App = () => {
       : "Celtic Cross"
   );
 
+  const [language, setLanguage] = useState(localStorage.getItem('language')? localStorage.getItem('language'): "English");
+
   return (
     <>
-      <Header setLayout={setLayout} />
-      <MainContext.Provider value={layout}>
-        <Main />
+      <Header setLayout={setLayout} setLanguage={setLanguage} />
+      <MainContext.Provider value={{layout, language}}>
+        <Main language={language} layout={layout}/>
       </MainContext.Provider>
       <Footer />
     </>

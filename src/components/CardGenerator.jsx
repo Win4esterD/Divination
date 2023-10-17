@@ -1,80 +1,96 @@
-import React from "react";
+import React, { useEffect,  useMemo, useRef, forwardRef } from "react";
 import WaiteIMGs from "../JSON/waite-images.json";
-
-class CardsGenerator extends React.Component{
-
-  constructor(props){
-    super(props);
-
-    this.cardSound = new Audio('./assets/audio/card-fly.mp3');
-
-    this.revealCard = this.revealCard.bind(this);
-  }
-
-  componentDidMount(){
-    const layouts = document.querySelector('.layouts');
-    layouts.addEventListener('change', () => {
-      this.props.resetCounter();
-      this.props.resetIds();
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((el) => {
-        el.removeAttribute('style');
-      })
-    });
-  }
+import Card from "./Card";
 
 
-  getRandomInt(min, max) {
+const CardsGenerator = ({
+  collectIds,
+  resetIds,
+  counter,
+  increaseCounter,
+  resetCounter,
+  layout,
+}) => {
+
+  const cardSound = new Audio("./assets/audio/card-fly.mp3");
+
+  useEffect(() => {
+    // const layouts = document.querySelector(".layouts");
+    // layouts.addEventListener("change", () => {
+      // resetCounter();
+      // resetIds();
+      // const cards = document.querySelectorAll(".card");
+      // cards.forEach((el) => {
+        // el.removeAttribute("style");
+      // });
+    // });
+
+    // const cards = document.querySelectorAll(".card");
+    resetCounter();
+    resetIds();
+  }, [layout]);
+
+  const cardRef = useRef(null);
+
+
+  function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
   //Revealing cards
-  revealCard(event){
+  function revealCard(event) {
     const card = event.target;
-    const layoutCards = document.querySelectorAll('.layout-card');
-    if(this.props.counter < layoutCards.length){
-      this.cardSound.play();
-      layoutCards[this.props.counter].style.backgroundImage = `url(${WaiteIMGs[card.id - 1].image})`;
-      this.props.collectIds(card.id);
-      this.props.increaseCounter();
+    const layoutCards = document.querySelectorAll(".layout-card");
+    if (counter < layoutCards.length) {
+      cardSound.play();
+      layoutCards[counter].style.backgroundImage = `url(${
+        WaiteIMGs[card.id - 1].image
+      })`;
+      collectIds(card.id);
+      increaseCounter();
       card.style.display = "none";
-      }
     }
-  
-
-  //generates cards, where "num" is id of the card to be generated
-  generateOneCard(num){
-    return (
-      <div id={String(num)} key={String(num)} className="card" onClick={this.revealCard}></div>
-    )
   }
 
-  generateAllCards(){
+  //generates cards, where "num" is id of the card to be generated
+  function generateOneCard(num) {
+    return (
+      <Card
+        id={num.toString()}
+        key={num.toString()}
+        clickHandler={revealCard}
+        layout={layout}
+        className={'card'}
+      />
+    );
+  }
+
+  function generateAllCards() {
     const result = [];
     const numCounter = [];
 
-    while(result.length !== 78){
-      let randInt = this.getRandomInt(1, 79);
-      if(!numCounter.includes(randInt)){
+    while (result.length !== 78) {
+      let randInt = getRandomInt(1, 79);
+      if (!numCounter.includes(randInt)) {
         numCounter.push(randInt);
-        result.push(this.generateOneCard(randInt))
+        result.push(generateOneCard(randInt));
       }
     }
 
-    return result
+    return result;
   }
 
-  render(){
-    return (
-      <div className="cards-wrapper">
-        {this.generateAllCards().map((card) => {
-          return card
-        })}
-      </div>
-    )
-  }
-}
+  const allCards = useMemo(generateAllCards, [layout]);
 
-export default CardsGenerator
+  return (
+    <div className="cards-wrapper">
+      {generateAllCards().map((card) => {
+        return card;
+      })}
+    </div>
+  );
+};
+
+export default CardsGenerator;
