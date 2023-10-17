@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import '../styles/results.scss';
 import WaiteIMGs from "../JSON/waite-images.json";
 import ResetButtom from './Reset-button';
@@ -9,8 +9,41 @@ import ResetButtom from './Reset-button';
 // import CardsEng from '../JSON/cards-en.json';
 // import CardsRus from '../JSON/cards-rus.json';
 
+const inLove = {
+  Русский: "В любви и отношениях - ",
+  English: "In love and relationships - ",
+  Español: "En amor y relaciones - ",
+};
 
-const Result = ({ ids, layout, cards, language, resetIds, resetCounter }) => {
+const InPofession = {
+  Русский: "В профессии - ",
+  English: "In profession - ",
+  Español: "En profesión - ",
+};
+
+const InGeneral = {
+  Русский: "В целом - ",
+  English: "In general - ",
+  Español: "En general - ",
+};
+
+const arcaneDesc = {
+  Русский: "Описание аркана:",
+  English: "Arcane description",
+  Español: "Descripción de arcano",
+};
+
+
+const Result = ({
+  ids,
+  layout,
+  cards,
+  language,
+  resetIds,
+  resetCounter,
+  layoutCards,
+  results,
+}) => {
   function generateOneCardResult(
     cardName,
     cardImage,
@@ -21,34 +54,10 @@ const Result = ({ ids, layout, cards, language, resetIds, resetCounter }) => {
     profession,
     generally
   ) {
-    const inLove = {
-      Русский: "В любви и отношениях - ",
-      English: "In love and relationships - ",
-      Español: "En amor y relaciones - ",
-    };
-
-    const InPofession = {
-      Русский: "В профессии - ",
-      English: "In profession - ",
-      Español: "En profesión - ",
-    };
-
-    const InGeneral = {
-      Русский: "В целом - ",
-      English: "In general - ",
-      Español: "En general - ",
-    };
-
-    const arcaneDesc = {
-      Русский: "Описание аркана:",
-      English: "Arcane description",
-      Español: "Descripción de arcano",
-    };
-
     return (
       <div className="results-wrapper">
         <div className="card-block">
-          <p className="arcane-name">{cardName}</p>
+          <p className="arcane-name"></p>
           <div className="arcane-image-div">
             <img className="arcane-image-img" src={cardImage}></img>
           </div>
@@ -81,7 +90,7 @@ const Result = ({ ids, layout, cards, language, resetIds, resetCounter }) => {
   function resetButtonHandler() {
     resetIds();
     resetCounter();
-    const cards = document.querySelectorAll(".card");
+    const cards = layoutCards.current.childNodes;
     cards.forEach((el) => {
       el.removeAttribute("style");
     });
@@ -90,9 +99,8 @@ const Result = ({ ids, layout, cards, language, resetIds, resetCounter }) => {
   //Smoothly scrolls to the results page, where the first card is presented
   function scrollToTheResult() {
     setTimeout(() => {
-      const results = document.querySelector(".results-wrapper");
-      if (results) {
-        results.scrollIntoView({
+      if (results.current) {
+        results.current.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
@@ -508,7 +516,7 @@ const Result = ({ ids, layout, cards, language, resetIds, resetCounter }) => {
   }
 
   //This function only serves for the tests, to generate all the cards in a deck
-/*   function showAllCardsInResults(deck) {
+  /*   function showAllCardsInResults(deck) {
     const predictions = [];
     if (language === "Русский") {
       predictions.push(
