@@ -1,57 +1,16 @@
-import React, { useEffect,  useMemo, useRef, forwardRef } from "react";
-import WaiteIMGs from "../JSON/waite-images.json";
+import React, { useEffect, useMemo } from "react";
 import Card from "./Card";
 
-
-const CardsGenerator = ({
-  collectIds,
-  resetIds,
-  counter,
-  increaseCounter,
-  resetCounter,
-  layout,
-}) => {
-
-  const cardSound = new Audio("./assets/audio/card-fly.mp3");
-
+const CardsGenerator = ({ resetIds, resetCounter, layout, revealCard }) => {
   useEffect(() => {
-    // const layouts = document.querySelector(".layouts");
-    // layouts.addEventListener("change", () => {
-      // resetCounter();
-      // resetIds();
-      // const cards = document.querySelectorAll(".card");
-      // cards.forEach((el) => {
-        // el.removeAttribute("style");
-      // });
-    // });
-
-    // const cards = document.querySelectorAll(".card");
     resetCounter();
     resetIds();
   }, [layout]);
-
-  const cardRef = useRef(null);
-
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  //Revealing cards
-  function revealCard(event) {
-    const card = event.target;
-    const layoutCards = document.querySelectorAll(".layout-card");
-    if (counter < layoutCards.length) {
-      cardSound.play();
-      layoutCards[counter].style.backgroundImage = `url(${
-        WaiteIMGs[card.id - 1].image
-      })`;
-      collectIds(card.id);
-      increaseCounter();
-      card.style.display = "none";
-    }
   }
 
   //generates cards, where "num" is id of the card to be generated
@@ -62,7 +21,7 @@ const CardsGenerator = ({
         key={num.toString()}
         clickHandler={revealCard}
         layout={layout}
-        className={'card'}
+        className={"card"}
       />
     );
   }
@@ -81,6 +40,22 @@ const CardsGenerator = ({
 
     return result;
   }
+
+  //Revealing cards
+  // function revealCard(event) {
+  //   const card = event.target;
+  //   const layoutCards = document.querySelectorAll(".layout-card");
+  //   if (counter < layoutCards.length) {
+  //     cardSound.play();
+
+  //     layoutCards[counter].style.backgroundImage = `url(${
+  //       WaiteIMGs[card.id - 1].image
+  //     })`;
+  //     collectIds(card.id);
+  //     increaseCounter();
+  //     card.style.display = "none";
+  //   }
+  // }
 
   const allCards = useMemo(generateAllCards, [layout]);
 
