@@ -71,30 +71,33 @@ const Main = () => {
     setCounter(counter + 1);
   }
 
+  const results = useRef(null);
+
   return (
     <main>
       <section className="ritual-table">
         <GreetingsMenu />
         <RitualSubjects />
-        <Layout ref={layoutCards}/>
+        <Layout ref={layoutCards} />
         <CardsGenerator
           collectIds={collectIds}
           resetIds={resetIds}
-          // counter={counter}
           increaseCounter={increaseCounter}
           resetCounter={resetCounter}
           layout={layout}
           revealCard={revealCard}
         />
       </section>
-      <section className="results">
+      <section className="results" ref={results}>
         <Result
+          results={results}
           ids={ids}
           layout={layout}
           cards={deck}
           language={language}
           resetIds={resetIds}
           resetCounter={resetCounter}
+          layoutCards={layoutCards}
         />
       </section>
     </main>
