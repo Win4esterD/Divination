@@ -1,111 +1,82 @@
-import React from 'react';
-import '../styles/layouts/celtic-cross.scss';
+import React, { forwardRef } from "react";
+import "../styles/layouts/celtic-cross.scss";
 import "../styles/layouts/cross.scss";
 import "../styles/layouts/love-oracle.scss";
 import "../styles/layouts/compas.scss";
+import Card from "./Card";
+import MainContext from "../context/MainContext";
+import { useContext, useEffect } from "react";
 
-class Layout extends React.Component{
+const Layout = forwardRef(function Layout(_, ref){
+  const layoutGenerator = {
+    "Celtic Cross": celticCross(),
+    Cross: cross(),
+    "Love Oracle": loveOracle(),
+    Compas: compas(),
+  };
 
-  constructor(props){
-    super(props);
-    this.layoutFunctions = {
-      'Celtic Cross': this.celticCross(),
-      'Cross': this.cross(),
-      'Love Oracle': this.loveOracle(),
-      'Compas': this.compas(),
-    }
 
-    this.state = {
-      layout: this.layoutFunctions[localStorage.getItem('layout')? localStorage.getItem('layout'): 'Celtic Cross'],
-    }
-  }
 
-  componentDidMount(){
-    const layoutOption = document.querySelector('.layouts');
-    layoutOption.addEventListener('change', () => {
-      if(layoutOption.value === layoutOption[0].value){
-        this.setState({layout: this.celticCross()});
-        this.props.getLayout('Celtic Cross');
-        localStorage.setItem('layoutNumber', 0)
-        localStorage.setItem('layout', 'Celtic Cross')
-      }else if(layoutOption.value === layoutOption[1].value){
-        this.setState({layout: this.cross()});
-        this.props.getLayout('Cross');
-        localStorage.setItem('layoutNumber', 1);
-        localStorage.setItem('layout', 'Cross');
-      }else if(layoutOption.value === layoutOption[2].value){
-        this.setState({layout: this.loveOracle()});
-        this.props.getLayout('Love Oracle');
-        localStorage.setItem('layoutNumber', 2);
-        localStorage.setItem('layout', 'Love Oracle');
-      }else if(layoutOption.value === layoutOption[3].value){
-        this.setState({layout: this.compas()});
-        this.props.getLayout('Compas');
-        localStorage.setItem('layoutNumber', 3);
-        localStorage.setItem('layout', 'Compas');
-      }
-    })
-  }
-  
-  celticCross(){
+
+  const { layout } = useContext(MainContext);
+
+  function celticCross() {
     return (
-      <div className="celtic-cross">
-        <div className="card layout-card celtic-cross__1"></div>
-        <div className="card layout-card celtic-cross__2"></div>
-        <div className="card layout-card celtic-cross__3"></div>
-        <div className="card layout-card celtic-cross__4"></div>
-        <div className="card layout-card celtic-cross__5"></div>
-        <div className="card layout-card celtic-cross__6"></div>
-        <div className="card layout-card celtic-cross__7"></div>
-        <div className="card layout-card celtic-cross__8"></div>
-        <div className="card layout-card celtic-cross__9"></div>
-        <div className="card layout-card celtic-cross__10"></div>
+      <div className="celtic-cross" ref={ref}>
+        <Card className={"card layout-card celtic-cross__1"} />
+        <Card className={"card layout-card celtic-cross__2"} />
+        <Card className={"card layout-card celtic-cross__3"} />
+        <Card className={"card layout-card celtic-cross__4"} />
+        <Card className={"card layout-card celtic-cross__5"} />
+        <Card className={"card layout-card celtic-cross__6"} />
+        <Card className={"card layout-card celtic-cross__7"} />
+        <Card className={"card layout-card celtic-cross__8"} />
+        <Card className={"card layout-card celtic-cross__9"} />
+        <Card className={"card layout-card celtic-cross__10"} />
       </div>
-    )
+    );
   }
 
-
-  cross(){
+  function cross() {
     return (
-      <div className="cross">
-        <div className="card layout-card layout-card cross__1"></div>
-        <div className="card layout-card layout-card cross__2"></div>
-        <div className="card layout-card layout-card cross__3"></div>
-        <div className="card layout-card layout-card cross__4"></div>
+      <div className="cross" ref={ref}>
+        <Card className={"card layout-card layout-card cross__1"} />
+        <Card className={"card layout-card layout-card cross__2"} />
+        <Card className={"card layout-card layout-card cross__3"} />
+        <Card className={"card layout-card layout-card cross__4"} />
       </div>
-    )
+    );
   }
 
-
-  loveOracle(){
+  function loveOracle() {
     return (
-      <div className="love-oracle">
-        <div className="card layout-card love-oracle__1"></div>
-        <div className="card layout-card love-oracle__2"></div>
-        <div className="card layout-card love-oracle__3"></div>
-        <div className="card layout-card love-oracle__4"></div>
+      <div className="love-oracle" ref={ref}>
+        <Card className={"card layout-card love-oracle__1"} />
+        <Card className={"card layout-card love-oracle__2"} />
+        <Card className={"card layout-card love-oracle__3"} />
+        <Card className={"card layout-card love-oracle__4"} />
       </div>
-    )
-  }
-  
-  compas(){
-    return (
-      <div className="compas">
-        <div className="card layout-card compas__1"></div>
-        <div className="card layout-card compas__2"></div>
-        <div className="card layout-card compas__3"></div>
-        <div className="card layout-card compas__4"></div>
-      </div>
-    )
+    );
   }
 
-  render(){
+  function compas() {
     return (
-      <div className="layout">
-        {this.state.layout}
+      <div className="compas" ref={ref}>
+        <Card className={"card layout-card compas__1"} />
+        <Card className={"card layout-card compas__2"} />
+        <Card className={"card layout-card compas__3"} />
+        <Card className={"card layout-card compas__4"} />
       </div>
-    )
+    );
   }
-}
+
+  return (
+    <div className="layout">
+      {layoutGenerator[layout]}
+    </div>
+  );
+})
+
+
 
 export default Layout;

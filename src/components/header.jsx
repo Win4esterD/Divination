@@ -1,86 +1,127 @@
-import React from 'react';
-import * as ReactDOMClient from "react-dom/client";
-import '../styles/header.scss'
+import "../styles/header.scss";
+import React from "react";
+import { useEffect, useState, useRef } from "react";
+import layoutNames from "../variables/layoutNames";
+import interfaceLocalizations from "../variables/interfaceLocalizations";
 
-class Header extends React.Component{
+const Header = ({ setLayout, setLanguage, language }) => {
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
+  const [isOpen, setIsOpen] = useState(false);
+  const header = useRef(null);
+  const list = useRef(null);
+  const layout = useRef(null);
+  const langMenu = useRef(null);
 
-  constructor(props){
-    super(props);
-    this.revealBurgerMenu = this.revealBurgerMenu.bind(this);
-    this.resizeHandler = this.resizeHandler.bind(this);
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    getLayout();
+    getLanguage();
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
+
+  function resizeHandler() {
+    setScreenWidth(window.screen.width);
   }
 
-  componentDidMount(){
-    window.addEventListener('resize', this.resizeHandler);
-    this.saveLayout();
-  }
-
-  resizeHandler(){
-    const header = document.querySelector('header');
-    const list = document.querySelector('.header__ul');
-    if(window.screen.width > 496){
-      header.style.height = "4.25em";
-      list.style.display = "flex";
-    }else{
-      header.style.height = "2em";
-      list.style.display = "none";
+  function revealBurgerMenu() {
+    if (isOpen) {
+      header.current.style.height = "2em";
+      list.current.style.display = "none";
+      setIsOpen(false);
+    } else {
+      header.current.style.height = "7.5em";
+      list.current.style.display = "flex";
+      setIsOpen(true);
     }
   }
 
-  
-
-  revealBurgerMenu(){
-    const header = document.querySelector('header');
-    const list = document.querySelector('.header__ul');
-    const listStyles = window.getComputedStyle(list);
-
-    if(listStyles.display === 'none'){
-      list.style.display = "flex";
-      header.style.height = "7.5em";
-    }else{
-      list.style.display = "none";
-      header.style.height = "2em";
+  function getLayout() {
+    if (localStorage.getItem("layoutNumber")) {
+      layout.current.value = layout.current.value =
+        localStorage.getItem("layoutNumber");
     }
   }
 
-  saveLayout(){
-    const layout = document.querySelector('.layouts');
-    if(localStorage.getItem('layoutNumber')){
-      layout.value = layout[localStorage.getItem('layoutNumber')].value;
+  function getLanguage() {
+    if (localStorage.getItem("language")) {
+      langMenu.current.value = localStorage.getItem("language");
     }
   }
 
-  render(){
-    return (
-      <header>
-        <nav className="header__nav">
-          <ul className="header__ul">
-            <li className="header__li"><a href="#">Теория ТАРО</a></li>
-            <li className="header__li">
-              <span>Расклады: </span>
-              <select className="layouts">
-                <option className="layouts__option 1" value="1">Кельтский крест</option>
-                <option className="layouts__option 2" value="2">Крест</option>
-                <option className="layouts__option 3" value="3">Оракул любви</option>
-                <option className="layouts__option 4" value="4">Компас</option>
-                {/* <option className="layouts__option">Следующий шаг</option>
+  return (
+    <header
+      ref={header}
+      style={screenWidth > 496 ? { height: "4.25rem" } : { height: "2em" }}
+    >
+      <nav className="header__nav">
+        <ul
+          ref={list}
+          className="header__ul"
+          style={screenWidth > 496 ? { display: "flex" } : { display: "none" }}
+        >
+          <li className="header__li">
+            <a href="#">{interfaceLocalizations[language][0]}</a>
+          </li>
+          <li className="header__li">
+            <span>{interfaceLocalizations[language][1]}</span>
+            <select
+              className="layouts"
+              ref={layout}
+              onChange={() => {
+                setLayout(layoutNames[layout.current.value]);
+                localStorage.setItem(
+                  "layout",
+                  layoutNames[layout.current.value]
+                );
+                localStorage.setItem("layoutNumber", layout.current.value);
+              }}
+            >
+              <option className="layouts__option 1" value="0">
+                {interfaceLocalizations[language][2]}
+              </option>
+              <option className="layouts__option 2" value="1">
+                {interfaceLocalizations[language][3]}
+              </option>
+              <option className="layouts__option 3" value="2">
+                {interfaceLocalizations[language][4]}
+              </option>
+              <option className="layouts__option 4" value="3">
+                {interfaceLocalizations[language][5]}
+              </option>
+              {/* <option className="layouts__option">Следующий шаг</option>
                 <option className="layouts__option">Путь</option> */}
-              </select>
-            </li>
-            <li className="header__li">
-              <span>Язык: </span>
-              <select className="language">
-                <option value="Русский" className="language__option">Русский</option>
-                <option value="English" className="language__option">English</option>
-                <option value="Español" className="language__option">Español</option>
-              </select>
-            </li>
-          </ul>
-          <img onClick={this.revealBurgerMenu} className="burger-menu" src="assets/IMG/burger_menu.png" alt="burger-menu"></img>
-        </nav>
-      </header>
-    )
-  }
-}
+            </select>
+          </li>
+          <li className="header__li">
+            <span>{interfaceLocalizations[language][6]}</span>
+            <select
+              className="language"
+              onChange={(e) => {
+                setLanguage(e.target.value);
+              }}
+              ref={langMenu}
+            >
+              <option value="Русский" className="language__option">
+                Русский
+              </option>
+              <option value="English" className="language__option">
+                English
+              </option>
+              <option value="Español" className="language__option">
+                Español
+              </option>
+            </select>
+          </li>
+        </ul>
+        <img
+          onClick={revealBurgerMenu}
+          className="burger-menu"
+          src="assets/IMG/burger_menu.png"
+          alt="burger-menu"
+        ></img>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;
