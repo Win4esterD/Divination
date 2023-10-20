@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/greetings-menu.scss';
+// import '../styles/greetings-menu.scss';
 
 const GreetingsMenu = () => {
   function setText(){
