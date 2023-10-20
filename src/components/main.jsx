@@ -11,18 +11,14 @@ import cardsEng from "../JSON/cards-en.json";
 import cardsEsp from "../JSON/cards-es.json";
 import { useState, useEffect, useRef, useContext } from "react";
 import { cardSound } from "../variables/cardSound";
-import WaiteIMGs from "../JSON/waite-images.json";
 import MainContext from "../context/MainContext";
 
 const Main = () => {
-
-  const [ids, setIds] = useState([]);
   const [deck, setDeck] = useState("");
   const layoutCards = useRef(null);
-  const { counter, setCounter, language, layout } = useContext(MainContext);
+  const { counter, setCounter, language, layout, ids, setIds } =
+    useContext(MainContext);
 
-
-  
   useEffect(() => {
     determineLanguage(language);
   }, [language]);
@@ -44,19 +40,15 @@ const Main = () => {
     const card = event.target;
     const layoutLength = layoutCards.current.children.length;
     if (counter < layoutLength) {
-      cardSound.play();
-      layoutCards.current.children[counter].style.backgroundImage = `url(${
-        WaiteIMGs[card.id - 1].image
-      })`;
-      collectIds(card.id);
-      increaseCounter();
-
-      card.style.display = "none";
+        cardSound.play();
+        collectIds(card.getAttribute("id"));
+        card.style.display = "none";
+        setCounter(counter + 1);
     }
   }
 
   function collectIds(value) {
-    setIds(id => [...id, value]);
+    setIds((id) => [...id, value]);
   }
 
   function resetIds() {
@@ -67,10 +59,6 @@ const Main = () => {
     setCounter(0);
   }
 
-  function increaseCounter() {
-    setCounter(counter + 1);
-  }
-
   const results = useRef(null);
 
   return (
@@ -78,11 +66,10 @@ const Main = () => {
       <section className="ritual-table">
         <GreetingsMenu />
         <RitualSubjects />
-        <Layout ref={layoutCards} />
+        <Layout ref={layoutCards} setCounter={setCounter} counter={counter} />
         <CardsGenerator
           collectIds={collectIds}
           resetIds={resetIds}
-          increaseCounter={increaseCounter}
           resetCounter={resetCounter}
           layout={layout}
           revealCard={revealCard}

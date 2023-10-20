@@ -54,6 +54,7 @@ const Result = ({
     profession,
     generally
   ) {
+
     return (
       <div className="results-wrapper">
         <div className="card-block">

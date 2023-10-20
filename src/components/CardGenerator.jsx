@@ -37,19 +37,13 @@ const CardsGenerator = ({ resetIds, resetCounter, layout, revealCard }) => {
         result.push(generateOneCard(randInt));
       }
     }
-
     return result;
   }
 
-  const allCards = useMemo(generateAllCards, [layout]);
 
-  return (
-    <div className="cards-wrapper">
-      {generateAllCards().map((card) => {
-        return card;
-      })}
-    </div>
-  );
+  // const layoutCards = useMemo(() => generateAllCards(), [layout]);
+
+  return <div className="cards-wrapper">{generateAllCards()}</div>;
 };
 
 export default CardsGenerator;
