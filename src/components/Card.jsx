@@ -5,14 +5,14 @@ import { cardSound } from "../variables/cardSound";
 
 const Card = ({ id, className }) => {
   const { layout, ids, setCounter, counter, setIds } = useContext(MainContext);
-  const [display, setDisplay] = useState('flex-block');
+  const [display, setDisplay] = useState('block');
   useEffect(() => {
-    setDisplay("flex-block");
+    setDisplay("block");
   }, [layout]);
 
   useEffect(() => {
     if(counter === 0) {
-      setDisplay("flex-block");
+      setDisplay("block");
     }
   }, [counter]);
 
@@ -26,6 +26,7 @@ const Card = ({ id, className }) => {
           setCounter(counter + 1);
           setIds([...ids, id]);
           setDisplay('none');
+          console.log(display)
         }
       }}
       style={{display: display}}
