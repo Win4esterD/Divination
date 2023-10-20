@@ -40,10 +40,10 @@ const Main = () => {
     const card = event.target;
     const layoutLength = layoutCards.current.children.length;
     if (counter < layoutLength) {
-        cardSound.play();
-        collectIds(card.getAttribute("id"));
-        card.style.display = "none";
-        setCounter(counter + 1);
+      cardSound.play();
+      collectIds(card.getAttribute("id"));
+      card.style.display = "none";
+      setCounter(counter + 1);
     }
   }
 
@@ -57,6 +57,16 @@ const Main = () => {
 
   function resetCounter() {
     setCounter(0);
+  }
+
+  //Allows to start over with current layout
+  function resetButtonHandler() {
+    resetIds();
+    resetCounter();
+    const cards = layoutCards.current.childNodes;
+    cards.forEach((el) => {
+      el.removeAttribute("style");
+    });
   }
 
   const results = useRef(null);
@@ -73,6 +83,8 @@ const Main = () => {
           resetCounter={resetCounter}
           layout={layout}
           revealCard={revealCard}
+          resetButtonHandler={resetButtonHandler}
+          counter={counter}
         />
       </section>
       <section className="results" ref={results}>
@@ -85,6 +97,7 @@ const Main = () => {
           resetIds={resetIds}
           resetCounter={resetCounter}
           layoutCards={layoutCards}
+          resetButtonHandler={resetButtonHandler}
         />
       </section>
     </main>

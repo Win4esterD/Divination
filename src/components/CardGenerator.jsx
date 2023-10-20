@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 
 const CardsGenerator = ({
@@ -42,6 +42,7 @@ const CardsGenerator = ({
     );
   }
 
+  //Fills table with cards to pick
   function generateAllCards() {
     const result = [];
     const numCounter = [];
@@ -56,7 +57,8 @@ const CardsGenerator = ({
     return result;
   }
 
-  // const layoutCards = useMemo(() => generateAllCards(), [layout]);
+  // const [cardsToPick, setCardsToPick] = useState(generateAllCards());
+
 
   return (
     <div ref={cardsWrapper} className="cards-wrapper">
