@@ -1,7 +1,7 @@
 import "../styles/header.scss";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import layoutNames from "../variables/layoutNames";
+import {layoutNames} from "../variables/layoutData";
 import interfaceLocalizations from "../variables/interfaceLocalizations";
 
 const Header = ({ setLayout, setLanguage, language }) => {

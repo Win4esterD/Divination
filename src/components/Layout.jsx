@@ -3,7 +3,6 @@ import "../styles/layouts/celtic-cross.scss";
 import "../styles/layouts/cross.scss";
 import "../styles/layouts/love-oracle.scss";
 import "../styles/layouts/compas.scss";
-// import Card from "./Card";
 import CardInLayout from "./CardInLayout";
 import MainContext from "../context/MainContext";
 import { useContext } from "react";

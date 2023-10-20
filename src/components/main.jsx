@@ -10,7 +10,6 @@ import cardsRus from "../JSON/cards-rus.json";
 import cardsEng from "../JSON/cards-en.json";
 import cardsEsp from "../JSON/cards-es.json";
 import { useState, useEffect, useRef, useContext } from "react";
-import { cardSound } from "../variables/cardSound";
 import MainContext from "../context/MainContext";
 
 const Main = () => {
@@ -33,17 +32,6 @@ const Main = () => {
     } else if (value === "Español") {
       setDeck(cardsEsp);
       localStorage.setItem("language", "Español");
-    }
-  }
-
-  function revealCard(event) {
-    const card = event.target;
-    const layoutLength = layoutCards.current.children.length;
-    if (counter < layoutLength) {
-      cardSound.play();
-      collectIds(card.getAttribute("id"));
-      card.style.display = "none";
-      setCounter(counter + 1);
     }
   }
 
@@ -82,7 +70,6 @@ const Main = () => {
           resetIds={resetIds}
           resetCounter={resetCounter}
           layout={layout}
-          revealCard={revealCard}
           resetButtonHandler={resetButtonHandler}
           counter={counter}
         />

@@ -1,38 +1,17 @@
 import React from "react";
-import '../styles/results.scss';
+import "../styles/results.scss";
 import WaiteIMGs from "../JSON/waite-images.json";
-import ResetButtom from './Reset-button';
-
-
+import ResetButtom from "./Reset-button";
+import {
+  inLove,
+  InPofession,
+  InGeneral,
+  arcaneDesc,
+} from "../variables/basicCardLocalizations";
 
 // Use these only when you want to run tests, generating all the cards in a deck
 // import CardsEng from '../JSON/cards-en.json';
 // import CardsRus from '../JSON/cards-rus.json';
-
-const inLove = {
-  Русский: "В любви и отношениях - ",
-  English: "In love and relationships - ",
-  Español: "En amor y relaciones - ",
-};
-
-const InPofession = {
-  Русский: "В профессии - ",
-  English: "In profession - ",
-  Español: "En profesión - ",
-};
-
-const InGeneral = {
-  Русский: "В целом - ",
-  English: "In general - ",
-  Español: "En general - ",
-};
-
-const arcaneDesc = {
-  Русский: "Описание аркана:",
-  English: "Arcane description",
-  Español: "Descripción de arcano",
-};
-
 
 const Result = ({
   ids,
@@ -43,7 +22,7 @@ const Result = ({
   resetButtonHandler,
 }) => {
   function generateOneCardResult(
-    cardName,
+    _,
     cardImage,
     arcaneDescription,
     prediction,

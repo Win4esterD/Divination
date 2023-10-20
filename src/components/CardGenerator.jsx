@@ -57,12 +57,18 @@ const CardsGenerator = ({
     return result;
   }
 
-  // const [cardsToPick, setCardsToPick] = useState(generateAllCards());
+  const [cardsToPick, setCardsToPick] = useState(generateAllCards());
+
+  useEffect(() => {
+    if(counter === 0) {
+      setCardsToPick(generateAllCards());
+    }
+  }, [layout, counter]);
 
 
   return (
     <div ref={cardsWrapper} className="cards-wrapper">
-      {generateAllCards()}
+      {cardsToPick}
     </div>
   );
 };
