@@ -1,11 +1,27 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useRef } from "react";
 import Card from "./Card";
 
-const CardsGenerator = ({ resetIds, resetCounter, layout, revealCard }) => {
+const CardsGenerator = ({
+  resetIds,
+  resetCounter,
+  layout,
+  revealCard,
+  counter,
+}) => {
+  const cardsWrapper = useRef(null);
+
   useEffect(() => {
     resetCounter();
     resetIds();
   }, [layout]);
+
+  useEffect(() => {
+    if(counter === 0) {
+      for (let child of cardsWrapper.current.children) {
+        child.removeAttribute("style");
+      }
+    }
+  }, [counter]);
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -40,10 +56,13 @@ const CardsGenerator = ({ resetIds, resetCounter, layout, revealCard }) => {
     return result;
   }
 
-
   // const layoutCards = useMemo(() => generateAllCards(), [layout]);
 
-  return <div className="cards-wrapper">{generateAllCards()}</div>;
+  return (
+    <div ref={cardsWrapper} className="cards-wrapper">
+      {generateAllCards()}
+    </div>
+  );
 };
 
 export default CardsGenerator;

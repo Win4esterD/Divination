@@ -5,7 +5,7 @@ import "../styles/layouts/love-oracle.scss";
 import "../styles/layouts/compas.scss";
 import Card from "./Card";
 import MainContext from "../context/MainContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const Layout = forwardRef(function Layout(_, ref){
   const layoutGenerator = {

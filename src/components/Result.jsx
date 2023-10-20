@@ -39,10 +39,8 @@ const Result = ({
   layout,
   cards,
   language,
-  resetIds,
-  resetCounter,
-  layoutCards,
   results,
+  resetButtonHandler,
 }) => {
   function generateOneCardResult(
     cardName,
@@ -54,7 +52,6 @@ const Result = ({
     profession,
     generally
   ) {
-
     return (
       <div className="results-wrapper">
         <div className="card-block">
@@ -85,16 +82,6 @@ const Result = ({
         </div>
       </div>
     );
-  }
-
-  //Allows to start over with current layout
-  function resetButtonHandler() {
-    resetIds();
-    resetCounter();
-    const cards = layoutCards.current.childNodes;
-    cards.forEach((el) => {
-      el.removeAttribute("style");
-    });
   }
 
   //Smoothly scrolls to the results page, where the first card is presented
