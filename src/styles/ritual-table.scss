@@ -1,63 +1,61 @@
-.ritual-table{
+.ritual-table {
   height: 1080px;
-  background-image: url('../assets/IMG/black-of-planks.jpg');
+  background-image: url("../assets/IMG/black-of-planks.jpg");
   background-size: cover;
   position: relative;
 }
 
-.ritual-subjects__div{
+.ritual-subjects__div {
   position: absolute;
 
-  .candle-fire{
+  .candle-fire {
     width: 6px;
     height: 19px;
   }
-
 }
 
-
-.main-pentagram{
+.main-pentagram {
   left: 26.9vw;
 }
 
-.bafomet-head{
+.bafomet-head {
   top: 1em;
 }
 
-.pentacle{
+.pentacle {
   top: 38em;
   left: 5vw;
 }
 
-.bafomet-stamp{
+.bafomet-stamp {
   position: absolute;
   right: 3vw;
   top: 37em;
 }
 
-.right-pentacle{
+.right-pentacle {
   position: absolute;
   right: 3vw;
   top: 2em;
 }
 
-.candle{
+.candle {
   position: relative;
 
-  .candle-img{
+  .candle-img {
     position: absolute;
     bottom: 11.5em;
     left: 10em;
   }
 
-  .candle-fire{
+  .candle-fire {
     position: absolute;
     bottom: 17.4em;
     left: 12.6em;
   }
 }
 
-.layout{
+.layout {
   position: absolute;
   z-index: 1;
   left: 37em;
@@ -68,21 +66,21 @@
   position: absolute;
 }
 
-.card{
+.card {
   height: 4.3em;
   width: 2.3em;
-  background: url('../assets/IMG/covers/cover1.png');
-  background-size: cover;
-  transition: ease 1s;
+  background-image: url("../assets/IMG/covers/cover1.png");
+  background-size: 100% 100%;
+  transition: all ease 1s;
 }
 
-.card:hover{
+.card:hover {
   cursor: pointer;
   transform: scale(1.2);
   z-index: 1;
 }
 
-.cards-wrapper{
+.cards-wrapper {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -92,131 +90,129 @@
   gap: 0.24vw;
 }
 
-
-@media (max-width: 1669px){
-  .pentacle{
+@media (max-width: 1669px) {
+  .pentacle {
     left: 1.5vw;
   }
 
-  .cards-wrapper{
+  .cards-wrapper {
     left: 25vw;
   }
 
-  .main-pentagram{
-    left: 24.5vw; 
+  .main-pentagram {
+    left: 24.5vw;
   }
 }
 
-@media (max-width: 1610px){
-  .right-pentacle{
+@media (max-width: 1610px) {
+  .right-pentacle {
     right: 1.5vw;
   }
 
-  .bafomet-stamp{
+  .bafomet-stamp {
     right: 1.5vw;
   }
 }
 
-@media(max-width: 1581px){
-
-  .right-pentacle__img{
+@media (max-width: 1581px) {
+  .right-pentacle__img {
     width: 18.75em;
     height: 18.75em;
   }
 
-  .bafomet-stamp__img{
+  .bafomet-stamp__img {
     width: 18.75em;
     height: 18.75em;
   }
 
-  .pentacle__img{
+  .pentacle__img {
     width: 18.75em;
     height: 18.75em;
   }
 
-  .bafomet-head__img{
+  .bafomet-head__img {
     width: 25em;
     height: 18.75em;
   }
 
-  .bafomet-stamp{
+  .bafomet-stamp {
     right: 3vw;
   }
 
-  .right-pentacle{
+  .right-pentacle {
     right: 3vw;
   }
 
-  .main-pentagram{
+  .main-pentagram {
     left: 23.5vw;
   }
 
-  .candle{
+  .candle {
     left: -3em;
     top: 3em;
   }
 }
 
-@media (max-width: 1423px){
-  .main-pentagram{
+@media (max-width: 1423px) {
+  .main-pentagram {
     left: 18vw;
   }
 
-  .cards-wrapper{
+  .cards-wrapper {
     left: 18vw;
   }
 }
 
-@media(max-width: 1366px){
-  .main-pentagram{
+@media (max-width: 1366px) {
+  .main-pentagram {
     left: 19vw;
   }
 
-  .cards-wrapper{
+  .cards-wrapper {
     left: 19vw;
   }
 
-  .bafomet-stamp{
+  .bafomet-stamp {
     right: 2vw;
   }
 
-  .right-pentacle{
+  .right-pentacle {
     right: 2vw;
   }
 }
 
-@media (max-width: 1324px){
-  .bafomet-stamp{
+@media (max-width: 1324px) {
+  .bafomet-stamp {
     right: 0.5vw;
   }
 
-  .right-pentacle{
+  .right-pentacle {
     right: 0.5vw;
   }
 }
 
-@media (max-width: 1300px){
-  .main-pentagram{
+@media (max-width: 1300px) {
+  .main-pentagram {
     left: 18vw;
   }
 }
 
-@media (max-width: 1279px){
-  .main-pentagram__img{
+@media (max-width: 1279px) {
+  .main-pentagram__img {
     width: 45em;
     height: 45em;
   }
 }
 
-@media (max-width: 1236px){
-  .cards-wrapper{
+@media (max-width: 1236px) {
+  .cards-wrapper {
     width: 50em;
     top: 47em;
     left: 18vw;
   }
 }
 
-@media(max-width: 1200px){
+@media (max-width: 1200px) {
   .right-pentacle__img {
     width: 15.75em;
     height: 15.75em;
@@ -237,12 +233,12 @@
     height: 12.75em;
   }
 
-  .bafomet-head{
+  .bafomet-head {
     top: 3em;
   }
 
   .candle .candle-img {
-    width:3em;
+    width: 3em;
     height: 4em;
     position: absolute;
     bottom: 11.5em;
@@ -254,24 +250,24 @@
     left: 11.3em;
   }
 
-  .cards-wrapper{
+  .cards-wrapper {
     left: 17vw;
   }
 }
 
-@media(max-width: 1116px){
-  .main-pentagram__img{
+@media (max-width: 1116px) {
+  .main-pentagram__img {
     width: 37em;
     height: 37em;
   }
 
-  .main-pentagram{
+  .main-pentagram {
     top: 5em;
     left: 16em;
   }
 }
 
-@media(max-width: 1024px){
+@media (max-width: 1024px) {
   .cards-wrapper {
     left: 12vw;
   }
@@ -281,24 +277,24 @@
   }
 }
 
-@media (max-width: 930px){
-  .main-pentagram__img{
+@media (max-width: 930px) {
+  .main-pentagram__img {
     width: 30em;
     height: 30em;
   }
 
-  .cards-wrapper{
+  .cards-wrapper {
     width: 39em;
     top: 40em;
     left: 17vw;
   }
 
-  .candle{
+  .candle {
     display: none;
   }
 }
 
-@media (max-width: 910px){
+@media (max-width: 910px) {
   .bafomet-head__img {
     width: 14em;
     height: 9.75em;
@@ -320,34 +316,34 @@
   }
 }
 
-@media (max-width: 775px){
+@media (max-width: 775px) {
   .cards-wrapper {
     left: 9vw;
   }
 }
 
-@media (max-width: 768px){
-  .main-pentagram{
+@media (max-width: 768px) {
+  .main-pentagram {
     left: 18vw;
   }
 }
 
-@media (max-width: 688px){
-  .cards-wrapper{
+@media (max-width: 688px) {
+  .cards-wrapper {
     left: 13vw;
     width: 32em;
     top: 36em;
   }
 }
 
-@media (max-width: 594px){
-  .cards-wrapper{
+@media (max-width: 594px) {
+  .cards-wrapper {
     left: 5vw;
     width: 32em;
     top: 36em;
   }
 
-  .main-pentagram__img{
+  .main-pentagram__img {
     width: 24em;
     height: 24em;
   }
@@ -362,57 +358,56 @@
     left: 9vw;
   }
 
-  .layout{
+  .layout {
     left: 31em;
   }
 }
 
-@media (max-width: 543px){
-  .cards-wrapper{
+@media (max-width: 543px) {
+  .cards-wrapper {
     width: 28.5em;
   }
 }
 
-@media (max-width: 496px){
-  .main-pentagram__img{
+@media (max-width: 496px) {
+  .main-pentagram__img {
     width: 19em;
     height: 19em;
   }
 
-  .cards-wrapper{
+  .cards-wrapper {
     top: 29em;
     width: 24em;
   }
 
-  .layout{
+  .layout {
     left: 0em;
   }
 }
 
-@media (max-width: 438px){
-  .bafomet-head{
+@media (max-width: 438px) {
+  .bafomet-head {
     top: 0em;
   }
 }
 
-@media (max-width: 406px){
+@media (max-width: 406px) {
   .card,
-  .layout .card
-  {
+  .layout .card {
     height: 40px;
     width: 21px;
   }
 
-  .cards-wrapper{
+  .cards-wrapper {
     width: 23em;
   }
 
-  .right-pentacle__img{
+  .right-pentacle__img {
     width: 7em;
     height: 7em;
   }
 
-  .right-pentacle{
+  .right-pentacle {
     top: 0em;
   }
 
@@ -422,7 +417,7 @@
   }
 }
 
-@media (max-width: 354px){
+@media (max-width: 354px) {
   .cards-wrapper {
     width: 19em;
   }
