@@ -15,14 +15,6 @@ const CardsGenerator = ({
     resetIds();
   }, [layout]);
 
-  // useEffect(() => {
-  //   if(counter === 0) {
-  //     for (let child of cardsWrapper.current.children) {
-  //       child.removeAttribute("style");
-  //     }
-  //   }
-  // }, [counter]);
-
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

@@ -5,7 +5,6 @@ import RitualSubjects from "./RitualSubjects";
 import CardsGenerator from "./CardGenerator";
 import Layout from "./Layout";
 import Result from "./Result";
-import GreetingsMenu from "./Greetings";
 import cardsRus from "../JSON/cards-rus.json";
 import cardsEng from "../JSON/cards-en.json";
 import cardsEsp from "../JSON/cards-es.json";
@@ -62,7 +61,6 @@ const Main = () => {
   return (
     <main>
       <section className="ritual-table">
-        <GreetingsMenu />
         <RitualSubjects />
         <Layout ref={layoutCards} setCounter={setCounter} counter={counter} />
         <CardsGenerator
