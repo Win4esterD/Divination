@@ -1,0 +1,149 @@
+@import "../../styles/mixins.scss";
+
+.header{
+  height: 4.25em;
+  background: #030000;
+}
+
+.burger-menu{
+  display: none;
+}
+
+.header__ul{
+  display: flex;
+  position: absolute;
+  left: 10vw;
+  top: 1em;
+  list-style-type: none;
+  gap: 20em;
+}
+
+.header__li{
+  @include navFont();
+}
+
+
+@media(max-width: 1459px){
+  .header__ul{
+    gap: 15em;
+  }
+}
+
+@media(max-width: 1280px){
+  .header__ul{
+    gap: 10em;
+  }
+}
+
+@media(max-width: 1103px){
+  .header__ul{
+    left: 4vw;
+    gap: 7em;
+  }
+}
+
+@media (max-width: 935px){
+  .header__li{
+    font-size: 18px;
+  }
+
+  .layouts{
+    font-size: 18px;
+  }
+
+  .layouts__option{
+    font-size: 18px;
+  }
+
+  .language{
+    font-size: 18px;
+  }
+
+  .language__option{
+    font-size: 18px;
+  }
+
+  .header__li a{
+    font-size: 18px;
+  }
+
+  .header__ul{
+    gap: 4em;
+  }
+}
+
+@media (max-width: 672px){
+  .header__li{
+    font-size: 16px;
+  }
+
+  .layouts{
+    font-size: 16px;
+  }
+
+  .layouts__option{
+    font-size: 16px;
+  }
+
+  .language{
+    font-size: 16px;
+  }
+
+  .language__option{
+    font-size: 16px;
+  }
+
+  .header__ul{
+    gap: 2em;
+  }
+}
+
+@media (max-width: 594px){
+  .header__li{
+    font-size: 14px;
+  }
+
+  .header__li a{
+    font-size: 14px;
+  }
+
+  .layouts{
+    font-size: 14px;
+  }
+
+  .layouts__option{
+    font-size: 14px;
+  }
+
+  .language{
+    font-size: 14px;
+  }
+
+  .language__option{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 496px){
+  .header{
+    height: 2em;
+  }
+
+  .burger-menu{
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 0.7em;
+  }
+
+
+  .header__ul{
+    top: 0.4em;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    gap: 0.4em;
+    left: 25vw;
+    display: none;
+  }
+}

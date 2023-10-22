@@ -1,0 +1,154 @@
+.ritual-table {
+  height: 1080px;
+  background-image: url("../../../public/assets/IMG/black-of-planks.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.layout {
+  position: absolute;
+  z-index: 1;
+  left: 37em;
+  top: 9em;
+}
+
+.layout div {
+  position: absolute;
+}
+
+.card {
+  height: 4.3em;
+  width: 2.3em;
+  background-image: url("../../../public/assets/IMG/covers/cover1.png");
+  background-size: 100% 100%;
+  transition: all ease 1s;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.cards-wrapper {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 52em;
+  top: 47em;
+  left: 28vw;
+  gap: 0.24vw;
+}
+
+@media (max-width: 1669px) {
+  .cards-wrapper {
+    left: 25vw;
+  }
+}
+
+@media (max-width: 1423px) {
+  .cards-wrapper {
+    left: 18vw;
+  }
+}
+
+@media (max-width: 1366px) {
+  .cards-wrapper {
+    left: 19vw;
+  }
+}
+
+@media (max-width: 1236px) {
+  .cards-wrapper {
+    width: 50em;
+    top: 47em;
+    left: 18vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards-wrapper {
+    left: 17vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards-wrapper {
+    left: 12vw;
+  }
+}
+
+@media (max-width: 930px) {
+  .cards-wrapper {
+    width: 39em;
+    top: 40em;
+    left: 17vw;
+  }
+}
+
+
+@media (max-width: 775px) {
+  .cards-wrapper {
+    left: 9vw;
+  }
+}
+
+@media (max-width: 688px) {
+  .cards-wrapper {
+    left: 13vw;
+    width: 32em;
+    top: 36em;
+  }
+}
+
+@media (max-width: 594px) {
+  .cards-wrapper {
+    left: 5vw;
+    width: 32em;
+    top: 36em;
+  }
+
+  .layout {
+    left: 31em;
+  }
+}
+
+@media (max-width: 543px) {
+  .cards-wrapper {
+    width: 28.5em;
+  }
+}
+
+@media (max-width: 496px) {
+  .cards-wrapper {
+    top: 29em;
+    width: 24em;
+  }
+
+  .layout {
+    left: 0em;
+  }
+}
+
+@media (max-width: 406px) {
+  .card,
+  .layout .card {
+    height: 40px;
+    width: 21px;
+  }
+
+  .cards-wrapper {
+    width: 23em;
+  }
+
+  .cards-wrapper {
+    width: 21em;
+    gap: 0.4em;
+  }
+}
+
+@media (max-width: 354px) {
+  .cards-wrapper {
+    width: 19em;
+  }
+}
