@@ -1,5 +1,5 @@
 import React from "react";
-import "./results.module.scss";
+import "./results.scss";
 import WaiteIMGs from "../../JSON/waite-images.json";
 import ResetButtom from "../ResetButton/ResetButton";
 import {

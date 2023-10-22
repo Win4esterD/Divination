@@ -7,6 +7,7 @@ import interfaceLocalizations from "../../variables/interfaceLocalizations";
 import Image from "next/image";
 import burgerImg from "../../../public/assets/IMG/burger_menu.png";
 
+
 const Header = ({ setLayout, setLanguage, language }) => {
   const [screenWidth, setScreenWidth] = useState('');
   const [isOpen, setIsOpen] = useState(false);

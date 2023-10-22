@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/components/reset-button.scss';
+import './resetButton.scss';
 
 const buttonLanguages = {
   Русский: "Начать Заново",

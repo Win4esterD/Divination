@@ -1,7 +1,8 @@
-import Image from 'next/image'
+'use client'
 import App from '../App'
+
 export default function Home() {
-  return ( 
+  return (
       <App />
-  )
+  );
 }

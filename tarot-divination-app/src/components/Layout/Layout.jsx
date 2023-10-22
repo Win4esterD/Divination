@@ -2,6 +2,11 @@ import React, { forwardRef } from "react";
 import CardInLayout from "../CardInLayout/CardInLayout";
 import MainContext from "../../context/MainContext";
 import { useContext } from "react";
+import "./celtic-cross.scss";
+import "./cross.scss";
+import './compas.scss';
+import './love-oracle.scss';
+
 
 const Layout = forwardRef(function Layout(_, ref) {
   const layoutGenerator = {

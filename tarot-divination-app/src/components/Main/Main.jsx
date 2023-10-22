@@ -1,6 +1,6 @@
+"use client";
 import React from "react";
-import ritualTable from "./ritual-table.module.scss";
-import resultsStyle from "./results.module.scss";
+import styles from "./main.module.scss";
 import RitualSubjects from "../RitualSubjects/RitualSubjects";
 import CardsGenerator from "../CardGenerator/CardGenerator";
 import Layout from "../Layout/Layout";
@@ -60,7 +60,7 @@ const Main = () => {
 
   return (
     <main>
-      <section className={ritualTable["ritual-table"]}>
+      <section className={styles["ritual-table"]}>
         <RitualSubjects />
         <Layout ref={layoutCards} setCounter={setCounter} counter={counter} />
         <CardsGenerator
@@ -72,7 +72,7 @@ const Main = () => {
           counter={counter}
         />
       </section>
-      <section className={resultsStyle.results} ref={results}>
+      <section className={styles.results} ref={results}>
         <Result
           results={results}
           ids={ids}

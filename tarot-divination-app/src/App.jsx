@@ -8,6 +8,7 @@ import WaiteIMGs from "./JSON/waite-images.json";
 import { useState } from "react";
 
 const App = () => {
+
   const [layout, setLayout] = useState(
     localStorage.getItem("layout")
       ? localStorage.getItem("layout")
