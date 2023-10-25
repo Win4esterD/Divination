@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body >{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
