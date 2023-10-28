@@ -11,7 +11,7 @@ export default function useLanguageAndLayout() {
       setLayout("Celtic Cross");
     }
 
-    if(localStorage.getItem('language') && localStorage.getItem('language') !== "English") {
+    if(localStorage.getItem('language')) {
       setLanguage(localStorage.getItem("language"));
     } else {
       setLanguage(localStorage.getItem("language"));

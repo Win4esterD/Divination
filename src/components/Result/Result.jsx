@@ -8,6 +8,7 @@ import {
   InGeneral,
   arcaneDesc,
 } from "../../variables/basicCardLocalizations";
+import Image from "next/image";
 
 // Use these only when you want to run tests, generating all the cards in a deck
 // import CardsEng from '../JSON/cards-en.json';
@@ -36,7 +37,7 @@ const Result = ({
         <div className="card-block">
           <p className="arcane-name"></p>
           <div className="arcane-image-div">
-            <img className="arcane-image-img" src={cardImage}></img>
+            <Image className="arcane-image-img" src={cardImage} alt="card-image" width={400} height={667}/>
           </div>
         </div>
         <div className="result-text">
