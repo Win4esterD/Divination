@@ -14,7 +14,7 @@ export default function useLanguageAndLayout() {
     if(localStorage.getItem('language')) {
       setLanguage(localStorage.getItem("language"));
     } else {
-      setLanguage(localStorage.getItem("language"));
+      setLanguage("English");
     }
 
   }, []);
