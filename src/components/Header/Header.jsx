@@ -8,21 +8,27 @@ import Image from "next/image";
 import burgerImg from "../../../public/assets/IMG/burger_menu.png";
 
 
-const Header = ({ setLayout, setLanguage, language }) => {
+const Header = ({ setLayout, setLanguage, language, layout }) => {
   const [screenWidth, setScreenWidth] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const header = useRef(null);
   const list = useRef(null);
-  const layout = useRef(null);
+  const layoutRef = useRef(null);
   const langMenu = useRef(null);
 
   useEffect(() => {
     window.addEventListener("resize", resizeHandler);
     setScreenWidth(window.screen.width);
-    getLayout();
     getLanguage();
+    if(localStorage.getItem('layout')) {
+      layoutRef.current.value = localStorage.getItem("layout");
+    }
     return () => window.removeEventListener("resize", resizeHandler);
   }, []);
+
+  // useEffect(() => {
+  //   layout ? (Rlayoutef.current.value = layout) : '';
+  // }, [layout])
 
   function resizeHandler() {
     setScreenWidth(window.screen.width);
@@ -40,16 +46,12 @@ const Header = ({ setLayout, setLanguage, language }) => {
     }
   }
 
-  function getLayout() {
-    if (localStorage.getItem("layoutNumber")) {
-      layout.current.value = layout.current.value =
-        localStorage.getItem("layoutNumber");
-    }
-  }
 
   function getLanguage() {
     if (localStorage.getItem("language")) {
       langMenu.current.value = localStorage.getItem("language");
+    }else {
+      langMenu.current.value = "English";
     }
   }
 
@@ -66,44 +68,44 @@ const Header = ({ setLayout, setLanguage, language }) => {
           style={screenWidth > 496 ? { display: "flex" } : { display: "none" }}
         >
           <li className={styles.header__li}>
-            <a href="#">{interfaceLocalizations[language][0]}</a>
+            <a href="#">{interfaceLocalizations[language? language: "English"][0]}</a>
           </li>
           <li className={styles.header__li}>
-            <span>{interfaceLocalizations[language][1]}</span>
+            <span>{interfaceLocalizations[language? language: "English"][1]}</span>
             <select
               className={styles.layouts}
-              ref={layout}
+              ref={layoutRef}
               onChange={() => {
-                setLayout(layoutNames[layout.current.value]);
+                setLayout(layoutNames[layoutRef.current.value]);
                 localStorage.setItem(
                   "layout",
-                  layoutNames[layout.current.value]
+                  layoutNames[layoutRef.current.value]
                 );
-                localStorage.setItem("layoutNumber", layout.current.value);
               }}
             >
-              <option className={styles.layouts__option + " " + "1"} value="0">
-                {interfaceLocalizations[language][2]}
+              <option className={styles.layouts__option + " " + "1"} value="Celtic Cross">
+                {interfaceLocalizations[language? language: "English"][2]}
               </option>
-              <option className={styles.layouts__option + " " + "2"} value="1">
-                {interfaceLocalizations[language][3]}
+              <option className={styles.layouts__option + " " + "2"} value="Cross">
+                {interfaceLocalizations[language? language: "English"][3]}
               </option>
-              <option className={styles.layouts__option + " " + "3"} value="2">
-                {interfaceLocalizations[language][4]}
+              <option className={styles.layouts__option + " " + "3"} value="Love Oracle">
+                {interfaceLocalizations[language? language: "English"][4]}
               </option>
-              <option className={styles.layouts__option + " " + "4"} value="3">
-                {interfaceLocalizations[language][5]}
+              <option className={styles.layouts__option + " " + "4"} value="Compas">
+                {interfaceLocalizations[language? language: "English"][5]}
               </option>
               {/* <option className="layouts__option">Следующий шаг</option>
                 <option className="layouts__option">Путь</option> */}
             </select>
           </li>
           <li className={styles.header__li}>
-            <span>{interfaceLocalizations[language][6]}</span>
+            <span>{interfaceLocalizations[language? language: "English"][6]}</span>
             <select
               className={styles.language}
               onChange={(e) => {
                 setLanguage(e.target.value);
+                // localStorage.setItem("language", e.target.value);
               }}
               ref={langMenu}
             >

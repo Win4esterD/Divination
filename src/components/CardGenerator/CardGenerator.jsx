@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Card from "../Card/Card";
 
@@ -50,7 +50,7 @@ const CardsGenerator = ({
     return result;
   }
 
-  const [cardsToPick, setCardsToPick] = useState(generateAllCards());
+  const [cardsToPick, setCardsToPick] = useState('');
 
   useEffect(() => {
     if (counter === 0) {
