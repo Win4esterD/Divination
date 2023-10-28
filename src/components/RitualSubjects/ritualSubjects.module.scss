@@ -1,0 +1,290 @@
+.ritual-subjects__div {
+  position: absolute;
+
+  .candle-fire {
+    width: 6px;
+    height: 19px;
+  }
+}
+
+.bafomet-head {
+  top: 1em;
+}
+
+.main-pentagram {
+  left: 26.9vw;
+}
+
+.bafomet-stamp {
+  position: absolute;
+  right: 3vw;
+  top: 37em;
+}
+
+.pentacle {
+  top: 38em;
+  left: 5vw;
+}
+
+.right-pentacle {
+  position: absolute;
+  right: 3vw;
+  top: 2em;
+}
+
+.candle {
+  position: relative;
+
+  .candle-img {
+    position: absolute;
+    bottom: 11.5em;
+    left: 10em;
+  }
+
+  .candle-fire {
+    position: absolute;
+    bottom: 17.4em;
+    left: 12.6em;
+  }
+}
+
+@media (max-width: 1669px) {
+  .main-pentagram {
+    left: 24.5vw;
+  }
+
+  .pentacle {
+    left: 1.5vw;
+  }
+}
+
+@media (max-width: 1610px) {
+  .right-pentacle {
+    right: 1.5vw;
+  }
+
+  .bafomet-stamp {
+    right: 1.5vw;
+  }
+}
+
+@media (max-width: 1581px) {
+  .main-pentagram {
+    left: 23.5vw;
+  }
+
+  .bafomet-head__img {
+    width: 25em;
+    height: 18.75em;
+  }
+
+  .bafomet-stamp {
+    right: 3vw;
+  }
+
+  .right-pentacle__img {
+    width: 18.75em;
+    height: 18.75em;
+  }
+
+  .bafomet-stamp__img {
+    width: 18.75em;
+    height: 18.75em;
+  }
+
+  .pentacle__img {
+    width: 18.75em;
+    height: 18.75em;
+  }
+
+  .right-pentacle {
+    right: 3vw;
+  }
+
+  .candle {
+    left: -3em;
+    top: 3em;
+  }
+}
+
+@media (max-width: 1423px) {
+  .main-pentagram {
+    left: 18vw;
+  }
+}
+
+@media (max-width: 1366px) {
+  .main-pentagram {
+    left: 19vw;
+  }
+
+  .bafomet-stamp {
+    right: 2vw;
+  }
+
+  .right-pentacle {
+    right: 2vw;
+  }
+}
+
+@media (max-width: 1324px) {
+  .bafomet-stamp {
+    right: 0.5vw;
+  }
+
+  .right-pentacle {
+    right: 0.5vw;
+  }
+}
+
+@media (max-width: 1300px) {
+  .main-pentagram {
+    left: 18vw;
+  }
+}
+
+@media (max-width: 1279px) {
+  .main-pentagram__img {
+    width: 45em;
+    height: 45em;
+  }
+}
+
+@media (max-width: 1116px) {
+  .main-pentagram__img {
+    width: 37em;
+    height: 37em;
+  }
+
+  .main-pentagram {
+    top: 5em;
+    left: 16em;
+  }
+}
+
+@media (max-width: 1200px) {
+  .right-pentacle__img {
+    width: 15.75em;
+    height: 15.75em;
+  }
+
+  .bafomet-stamp__img {
+    width: 15.75em;
+    height: 15.75em;
+  }
+
+  .pentacle__img {
+    width: 15.75em;
+    height: 15.75em;
+  }
+
+  .bafomet-head__img {
+    width: 21em;
+    height: 12.75em;
+  }
+
+  .bafomet-head {
+    top: 3em;
+  }
+
+  .candle .candle-img {
+    width: 3em;
+    height: 4em;
+    position: absolute;
+    bottom: 11.5em;
+    left: 10em;
+  }
+
+  .candle .candle-fire {
+    bottom: 14.7em;
+    left: 11.3em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-pentagram {
+    left: 14em;
+  }
+}
+
+@media (max-width: 930px) {
+  .main-pentagram__img {
+    width: 30em;
+    height: 30em;
+  }
+
+  .candle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-pentagram {
+    left: 18vw;
+  }
+}
+
+@media (max-width: 594px) {
+  .main-pentagram__img {
+    width: 24em;
+    height: 24em;
+  }
+
+  .main-pentagram {
+    top: 7em;
+    left: 9vw;
+  }
+}
+
+@media (max-width: 910px) {
+  .bafomet-head__img {
+    width: 14em;
+    height: 9.75em;
+  }
+
+  .right-pentacle__img {
+    width: 9.75em;
+    height: 9.75em;
+  }
+
+  .pentacle__img {
+    width: 9.75em;
+    height: 9.75em;
+  }
+
+  .bafomet-stamp__img {
+    width: 9.75em;
+    height: 9.75em;
+  }
+}
+
+@media (max-width: 594px) {
+  .bafomet-head__img {
+    width: 10em;
+    height: 6.75em;
+  }
+}
+
+@media (max-width: 496px) {
+  .main-pentagram__img {
+    width: 19em;
+    height: 19em;
+  }
+}
+
+@media (max-width: 438px) {
+  .bafomet-head {
+    top: 0em;
+  }
+}
+
+@media (max-width: 406px) {
+  .right-pentacle__img {
+    width: 7em;
+    height: 7em;
+  }
+
+  .right-pentacle {
+    top: 0em;
+  }
+}

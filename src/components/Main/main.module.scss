@@ -1,0 +1,15 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.results{
+  position: relative;
+  background-image: url('../../../public/assets/IMG/parchment.png');
+  background-size: cover;
+}
+
+.ritual-table {
+  height: 1080px;
+  background-image: url("../../../public/assets/IMG/black-of-planks.jpg");
+  background-size: cover;
+  position: relative;
+}
